@@ -1,0 +1,8037 @@
+
+
+<html>
+<head>
+  
+
+    <title>Solritas</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
+  <script type="text/javascript" src="/solr/js/lib/jquery-1.7.2.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/solr/collection1/admin/file?file=/velocity/main.css&contentType=text/css"/>
+  <link rel="stylesheet" href="/solr/collection1/admin/file?file=/velocity/jquery.autocomplete.css&contentType=text/css" type="text/css" />
+  <script type="text/javascript" src="/solr/collection1/admin/file?file=/velocity/jquery.autocomplete.js&contentType=text/javascript"></script>
+
+
+    <script>
+    $(document).ready(function(){
+      $("#q").autocomplete('/solr/collection1/terms', {             extraParams:{
+             'terms.prefix': function() { return $("#q").val();},
+             'terms.sort': 'count',
+             'terms.fl': 'name',
+             'wt': 'velocity',
+             'v.template': 'suggest'
+           }
+         }
+      ).keydown(function(e){
+        if (e.keyCode === 13){
+          $("#query-form").trigger('submit');
+        }
+      });
+
+      // http://localhost:8983/solr/collection1/terms?terms.fl=name&terms.prefix=i&terms.sort=count&wt=velocity&v.template=suggest
+    });
+
+    </script>
+</head>
+  <body>
+    <div id="admin"><a href="/solr/#/collection1">Solr Admin</a></div>
+    <div id="header">
+      
+
+<div id="head">
+  <span ><a href="/solr/collection1/browse?debugQuery=true"><img src="/solr/img/solr.png" id="logo"/></a></span>
+</div>
+    </div>
+    <div id="tabs">
+      
+
+
+
+<div class="tabs-bar" >
+
+  <span>Type of Search:</span>
+
+  
+      <span class="tab selected">
+          Simple
+      </span>
+
+    <span class="tab ">
+          <a href="/solr/collection1/browse?&queryOpts=spatial&debugQuery=true">
+        Spatial</a>
+      </span>
+
+    <span class="tab ">
+          <a href="/solr/collection1/browse?&debugQuery=true&queryOpts=group&group=true&group.field=manu_exact">
+        Group By</a>
+      </span>
+
+</div>
+    </div>
+    <div id="content">
+      
+
+
+
+<div class="query-box">
+  <form id="query-form" action="/solr/collection1/browse" method="GET">
+
+    <div class="inputs">
+      <span >
+        Find:
+        <input type="text" id="q" name="q" value="competition"/>
+        <input type="submit" id="querySubmit"/>
+        <input type="reset"/>
+      </span>
+      <div class="query-boost">
+        <span >
+          <input type="hidden" name="debugQuery" value="true"/>
+          <input type="hidden"  name="synonyms" value="true"/>
+          <input type="checkbox" name="defType" value="synonym_edismax"
+                      >
+            Expand Synonym
+          </input>
+        </span>
+      
+
+
+      
+
+
+      </div>
+  </div>
+
+          <input type="hidden" name="debugQuery" value="true"/>
+            
+    <div class="constraints" >
+          </div>
+
+    <div class="parsed_query_header">
+              <a href="#" onclick='jQuery(this).siblings("div").toggle(); return false;'>toggle parsed query</a>
+        <div class="parsed_query" style="display:none">(+DisjunctionMaxQuery((id:competition^10.0 | author:competition^2.0 | title:competition^10.0 | cat:competition^1.4 | text:competition^0.5 | keywords:competition^5.0 | manu:competition^1.1 | description:competition^5.0 | resourcename:competition | name:competition^1.2 | features:competition | sku:competition^1.5)))/no_coord</div>
+                </div>
+
+  </form>
+</div>
+
+
+
+<div class="navigators">
+  
+
+
+
+  <h2 >
+    Field Facets
+  </h2>
+                                                            
+
+
+<h2 >
+  Query Facets
+</h2>
+
+    <span class="facet-field"></span>
+    <ul>
+                            </ul>
+  
+
+<h2 >
+  Range Facets
+</h2>
+
+                      
+
+<h2 >
+  Pivot Facets
+</h2>
+
+
+    <span class="facet-field"></span>
+    <ul>
+                        </ul>
+  
+
+<h2 >
+  Clusters
+</h2>
+
+<div id="clusters">
+  Run Solr with java -Dsolr.clustering.enabled=true -jar start.jar to see clustered search results.
+</div>
+
+<script type="text/javascript">
+  $('#clusters').load("/solr/collection1/clustering?&debugQuery=true&q=competition",
+    {'wt':'velocity', 'v.template':"cluster_results"});
+</script>
+</div>
+
+<div class="pagination">
+  
+
+
+
+  <span>
+    <span class="results-found">82</span>
+    results found in
+    20 ms
+  </span>
+
+  Page <span class="page-num">1</span>
+    of <span class="page-count">9</span>
+
+   </div>
+
+<div class="error">
+  
+
+
+</div>
+
+<div class="results">
+  
+
+
+
+      
+
+
+<div class="result-document">
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="result-title">
+      <img src="/solr/img/filetypes/false.png" align="center">
+
+    <a href="http://na.leagueoflegends.com/en/tag/2014-all-star" target="_blank">
+    <b>2014 All-Star | League of Legends</b></a>
+
+    <span class="mlt">
+          <a href="?&debugQuery=true&q=id:%22http://na.leagueoflegends.com/en/tag/2014-all-star%22&mlt=true">
+        More Like This</a>
+      </span>
+
+</div>
+
+<div>
+  Id:       http://na.leagueoflegends.com/en/tag/2014-all-star      </div>
+
+<div>
+      URL: http://na.leagueoflegends.com/en/tag/2014-all-star
+    </div>
+
+
+
+<div class="result-body">
+         showcase <b>competition</b> from both the top teams and the favorite pro-players from each region in four days of <b>competition</b>.
+  1 month ago  
+ 
+  
+ 
+ 
+ 
+   
+  
+ 
+ 
+  
+ 
+  
+ 
+ 
+   
+
+ 
+ 
+ 
+  2014 World Championship      </div>
+
+<div class="mlt">
+        </div>  
+
+
+  <a href="#" onclick='jQuery(this).siblings("pre").toggle(); return false;'>
+    toggle explain</a>
+
+  <pre style="display:none">
+    
+0.0075675407 = (MATCH) max of:
+  0.0075675407 = (MATCH) weight(text:competition^0.5 in 491) [DefaultSimilarity], result of:
+    0.0075675407 = score(doc=491,freq=2.0 = termFreq=2.0
+), product of:
+      0.026287818 = queryWeight, product of:
+        0.5 = boost
+        5.2110496 = idf(docFreq=109, maxDocs=7417)
+        0.0100892605 = queryNorm
+      0.28787252 = fieldWeight in 491, product of:
+        1.4142135 = tf(freq=2.0), with freq of:
+          2.0 = termFreq=2.0
+        5.2110496 = idf(docFreq=109, maxDocs=7417)
+        0.0390625 = fieldNorm(doc=491)
+
+  </pre>
+
+  <a href="#" onclick='jQuery(this).siblings("pre2").toggle(); return false;'>
+    toggle all fields</a>
+
+  <pre2 style="display:none">
+          <br>
+        <span class="field-name">id :</span>
+        <span>
+                      http://na.leagueoflegends.com/en/tag/2014-all-star
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">links :</span>
+        <span>
+                      http://na.leagueoflegends.com/en/tag/2014-all-star
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">content :</span>
+        <span>
+                      2014 All-Star | League of Legends 
+ 
+ 
+
+
+
+
+ 
+ 
+   North America - English   Support Login Register  
+  &amp;lt;iframe src=&quot;//www.googletagmanager.com/ns.html?id=GTM-N98J&quot;
+ height=&quot;0&quot; width=&quot;0&quot; style=&quot;display:none;visibility:hidden&quot;&amp;gt;&amp;lt;/iframe&amp;gt; 
+ 
+  
+  Skip to main content 
+ 
+  
+ 
+  League of Legends 
+  
+  
+     
+   Game Info 
+      
+    
+    
+    
+    
+ 
+ Get Started 
+   
+ 
+ What is LoL? 
+  
+ 
+ New Player Guide 
+  
+ 
+ Chat Commands 
+  
+ 
+ Community Interaction 
+  
+ 
+ Summoner's Code 
+  
+ 
+  
+ 
+ Download 
+  
+ 
+ Server Status 
+  
+ 
+ Champions 
+  
+ 
+ Items 
+  
+ 
+ Summoners 
+   
+ 
+ Spells 
+  
+ 
+ Runes 
+  
+ 
+ Masteries 
+  
+ 
+  
+ 
+ Game Modes 
+   
+ 
+ Summoner's Rift 
+  
+ 
+ The Twisted Treeline 
+  
+ 
+ Howling Abyss 
+  
+ 
+ The Crystal Scar 
+  
+ 
+  
+ 
+    
+   
+     
+     
+   News 
+     
+     
+   Competitive 
+      
+    
+    
+    
+    
+ 
+ 2014 Season FAQ 
+  
+ 
+    
+   
+     
+     
+   Forums 
+      
+    
+    
+    
+    
+ 
+ Community Beta 
+  
+ 
+ Red Tracker 
+  
+ 
+ Announcements 
+  
+ 
+ General Discussion 
+  
+ 
+    
+   
+     
+     
+   Community 
+      
+    
+    
+    
+    
+ 
+ Viewing Parties 
+  
+ 
+ Prized Events 
+  
+ 
+ Featured Streamers 
+  
+ 
+ Collegiate Program 
+  
+ 
+ Tribunal 
+  
+ 
+ Refer a Friend 
+  
+ 
+ Public Beta Environment 
+  
+ 
+    
+   
+     
+     
+   Media 
+      
+    
+    
+    
+    
+ 
+ Videos 
+   
+ 
+ Patch Previews 
+  
+ 
+ Champion Spotlight 
+  
+ 
+ Summoner Showcases 
+  
+ 
+ Creative Spotlight 
+  
+ 
+ Fan Videos 
+  
+ 
+  
+ 
+ Art 
+   
+ 
+ Artwork 
+  
+ 
+ Screenshots 
+  
+ 
+ Wallpapers 
+  
+ 
+ Fan Art 
+  
+ 
+  
+ 
+    
+   
+     
+    
+  
+  Play Now 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+  You are here Home 
+ Events and Tournaments 
+ 2014 All-Star 
+ 
+
+ 
+ 
+
+  
+   
+   
+ 
+  
+ 
+  
+ 
+ 
+  
+  
+ 
+ 
+   
+ 
+ 
+   
+  
+ 
+ 
+  
+ 
+  
+ 
+ 
+   
+
+ 
+ 
+ 
+  2014 All-Star Challenge Game Mode Voting is now Live Game Mode voting for the 2014 All-Star event is now live. Don't miss your opportunity to cast your votes to influence the exciting new All-Star Challenge. Click here for details!  3 days ago  
+ 
+  
+ 
+ 
+ 
+   
+  
+ 
+ 
+  
+ 
+  
+ 
+ 
+   
+
+ 
+ 
+ 
+  2014 All-Star Challenge Voting is Live Voting for the 2014 All-Star Event in Paris, France is now live.  17 days ago  
+ 
+  
+ 
+ 
+ 
+   
+  
+ 
+ 
+  
+ 
+  
+ 
+ 
+   
+
+ 
+ 
+ 
+  All-Star Paris 2014 Tickets On Sale Now! Tickets for All-Star Paris 2014 are now available for sale! The event spans from Thursday May 8 to Sunday May 11 at Le Zenith in Paris, France.  17 days ago  
+ 
+  
+ 
+ 
+ 
+   
+  
+ 
+ 
+  
+ 
+  
+ 
+ 
+   
+
+ 
+ 
+ 
+  All-Star Schedule Live and Tickets On Sale in 48 Hours The All-Star Paris 2014 schedule is now available. Start your countdowns! In 48 hours, tickets will go on sale. The event spans from Thursday May 8 to Sunday May 11 at Le Zenith Arena in Paris, France.  19 days ago  
+ 
+  
+ 
+ 
+ 
+   
+  
+ 
+ 
+  
+ 
+  
+ 
+ 
+   
+
+ 
+ 
+ 
+  Voting for the All-Star Challenge Excited about our all-new All-Star Challenge? Click here to find out everything you need to know about casting your votes to influence this new and exciting style of All-Star play.  19 days ago  
+ 
+  
+ 
+ 
+ 
+   
+  
+ 
+ 
+  
+ 
+  
+ 
+ 
+   
+
+ 
+ 
+ 
+  All-Star 2014 heads to Paris, France We're excited to announce that the 2014 League of Legends All-Star event will be held in Paris, France. Taking place from Thursday, May 8 to Sunday, May 11 at Le Zenith Arena, a new format will feature the All-Star Invitational and All-Star Challenge. With these changes, the event will showcase competition from both the top teams and the favorite pro-players from each region in four days of competition.
+  1 month ago  
+ 
+  
+ 
+ 
+ 
+   
+  
+ 
+ 
+  
+ 
+  
+ 
+ 
+   
+
+ 
+ 
+ 
+  2014 World Championship heads to South Korea With the preseason about to kick off, we're ready to announce that the 2014 World Championship will be held in South Korea.  5 months ago  
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+   
+  
+  
+ 
+  
+    About League Of Legends 
+    Merchandise 
+    Prepaid Cards 
+    Refer a Friend 
+    Help Us Improve 
+    Server Status 
+    Tribunal 
+    Support 
+    Esports Pro Site 
+   
+  
+  
+   
+   Riot Games 
+   
+       
+               
+    YouTube.com
+    
+    
+       
+               
+    Twitter.com
+    
+    
+       
+               
+    Facebook.com
+    
+    
+      
+   
+  
+  
+   Play Now 
+   2013 Riot Games, Inc. All rights reserved. Riot Games, League of Legends and PvP.net are trademarks, services marks, or registered trademarks of Riot Games, Inc. 
+   
+      Eula 
+      Privacy Policy 
+      Terms Of Use 
+      Tribunal Policy 
+     
+  
+  
+   
+   PVP.net 
+   
+       Signup 
+       Support 
+      
+   
+  
+  
+  
+    
+   
+    
+   
+   
+    
+   
+    
+   
+   
+   
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+ &amp;lt;a href=&quot;http://www.omniture.com&quot; title=&quot;Web Analytics&quot;&amp;gt;&amp;lt;img src=&quot;http://riotgames.d1.sc.omtrdc.net/b/ss/riotgamesuniverse/1/H.26.2--NS/0/6424562&quot;
+height=&quot;1&quot; width=&quot;1&quot; border=&quot;0&quot; alt=&quot;&quot; /&amp;gt;&amp;lt;/a&amp;gt;
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">title :</span>
+        <span>
+                      2014 All-Star | League of Legends
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">_version_ :</span>
+        <span>
+                      1465639982804762624
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">score :</span>
+        <span>
+                      0.0075675407
+                  </span>
+      </br>
+      </pre2>
+
+  
+</div>
+                  
+
+
+<div class="result-document">
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="result-title">
+      <img src="/solr/img/filetypes/false.png" align="center">
+
+    <a href="http://na.leagueoflegends.com/en/media/art/digi-art-throwdown-contest" target="_blank">
+    <b>Digi-Art Throwdown Contest | League of Legends</b></a>
+
+    <span class="mlt">
+          <a href="?&debugQuery=true&q=id:%22http://na.leagueoflegends.com/en/media/art/digi-art-throwdown-contest%22&mlt=true">
+        More Like This</a>
+      </span>
+
+</div>
+
+<div>
+  Id:       http://na.leagueoflegends.com/en/media/art/digi-art-throwdown-contest      </div>
+
+<div>
+      URL: http://na.leagueoflegends.com/en/media/art/digi-art-throwdown-contest
+    </div>
+
+
+
+<div class="result-body">
+         
+  
+
+ 
+ 
+
+  
+   
+   
+ 
+       
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+                                                                                                                                                                     Digi-Art Throwdown Contest The Digi-Art Throwdown contest has come to an end and you all made it a huge success the <b>competition</b> came right down to the last pixel! 
+  Fan Art 
+ 
+ 
+  
+ 
+ 
+        36      </div>
+
+<div class="mlt">
+        </div>  
+
+
+  <a href="#" onclick='jQuery(this).siblings("pre").toggle(); return false;'>
+    toggle explain</a>
+
+  <pre style="display:none">
+    
+0.007491484 = (MATCH) max of:
+  0.007491484 = (MATCH) weight(text:competition^0.5 in 322) [DefaultSimilarity], result of:
+    0.007491484 = score(doc=322,freq=1.0 = termFreq=1.0
+), product of:
+      0.026287818 = queryWeight, product of:
+        0.5 = boost
+        5.2110496 = idf(docFreq=109, maxDocs=7417)
+        0.0100892605 = queryNorm
+      0.28497928 = fieldWeight in 322, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        5.2110496 = idf(docFreq=109, maxDocs=7417)
+        0.0546875 = fieldNorm(doc=322)
+
+  </pre>
+
+  <a href="#" onclick='jQuery(this).siblings("pre2").toggle(); return false;'>
+    toggle all fields</a>
+
+  <pre2 style="display:none">
+          <br>
+        <span class="field-name">id :</span>
+        <span>
+                      http://na.leagueoflegends.com/en/media/art/digi-art-throwdown-contest
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">links :</span>
+        <span>
+                      http://na.leagueoflegends.com/en/media/art/digi-art-throwdown-contest
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">content :</span>
+        <span>
+                      Digi-Art Throwdown Contest | League of Legends 
+ 
+ 
+
+
+
+
+ 
+ 
+    North America - English   Support Login Register  
+  &amp;lt;iframe src=&quot;//www.googletagmanager.com/ns.html?id=GTM-N98J&quot;
+ height=&quot;0&quot; width=&quot;0&quot; style=&quot;display:none;visibility:hidden&quot;&amp;gt;&amp;lt;/iframe&amp;gt; 
+ 
+  
+  Skip to main content 
+ 
+  
+ 
+  League of Legends 
+  
+  
+     
+   Game Info 
+      
+    
+    
+    
+    
+ 
+ Get Started 
+   
+ 
+ What is LoL? 
+  
+ 
+ New Player Guide 
+  
+ 
+ Chat Commands 
+  
+ 
+ Community Interaction 
+  
+ 
+ Summoner's Code 
+  
+ 
+  
+ 
+ Download 
+  
+ 
+ Server Status 
+  
+ 
+ Champions 
+  
+ 
+ Items 
+  
+ 
+ Summoners 
+   
+ 
+ Spells 
+  
+ 
+ Runes 
+  
+ 
+ Masteries 
+  
+ 
+  
+ 
+ Game Modes 
+   
+ 
+ Summoner's Rift 
+  
+ 
+ The Twisted Treeline 
+  
+ 
+ Howling Abyss 
+  
+ 
+ The Crystal Scar 
+  
+ 
+  
+ 
+    
+   
+     
+     
+   News 
+     
+     
+   Competitive 
+      
+    
+    
+    
+    
+ 
+ 2014 Season FAQ 
+  
+ 
+    
+   
+     
+     
+   Forums 
+      
+    
+    
+    
+    
+ 
+ Community Beta 
+  
+ 
+ Red Tracker 
+  
+ 
+ Announcements 
+  
+ 
+ General Discussion 
+  
+ 
+    
+   
+     
+     
+   Community 
+      
+    
+    
+    
+    
+ 
+ Viewing Parties 
+  
+ 
+ Prized Events 
+  
+ 
+ Featured Streamers 
+  
+ 
+ Collegiate Program 
+  
+ 
+ Tribunal 
+  
+ 
+ Refer a Friend 
+  
+ 
+ Public Beta Environment 
+  
+ 
+    
+   
+     
+     
+   Media 
+      
+    
+    
+    
+    
+ 
+ Videos 
+   
+ 
+ Patch Previews 
+  
+ 
+ Champion Spotlight 
+  
+ 
+ Summoner Showcases 
+  
+ 
+ Creative Spotlight 
+  
+ 
+ Fan Videos 
+  
+ 
+  
+ 
+ Art 
+   
+ 
+ Artwork 
+  
+ 
+ Screenshots 
+  
+ 
+ Wallpapers 
+  
+ 
+ Fan Art 
+  
+ 
+  
+ 
+    
+   
+     
+    
+  
+  Play Now 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+  You are here Home 
+ Media 
+ Art 
+ Fan Art 
+  
+
+ 
+ 
+
+  
+   
+   
+ 
+       
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+                                                                                                                                                                     Digi-Art Throwdown Contest The Digi-Art Throwdown contest has come to an end and you all made it a huge success the competition came right down to the last pixel! 
+  Fan Art 
+ 
+ 
+  
+ 
+ 
+        36  
+
+ 
+ 
+ 
+  12 months ago 
+ 
+ 
+   
+  
+  
+ 
+  
+    About League Of Legends 
+    Merchandise 
+    Prepaid Cards 
+    Refer a Friend 
+    Help Us Improve 
+    Server Status 
+    Tribunal 
+    Support 
+    Esports Pro Site 
+   
+  
+  
+   
+   Riot Games 
+   
+       
+               
+    YouTube.com
+    
+    
+       
+               
+    Twitter.com
+    
+    
+       
+               
+    Facebook.com
+    
+    
+      
+   
+  
+  
+   Play Now 
+   2013 Riot Games, Inc. All rights reserved. Riot Games, League of Legends and PvP.net are trademarks, services marks, or registered trademarks of Riot Games, Inc. 
+   
+      Eula 
+      Privacy Policy 
+      Terms Of Use 
+      Tribunal Policy 
+     
+  
+  
+   
+   PVP.net 
+   
+       Signup 
+       Support 
+      
+   
+  
+  
+  
+    
+   
+    
+   
+   
+    
+   
+    
+   
+   
+   
+ 
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+ &amp;lt;a href=&quot;http://www.omniture.com&quot; title=&quot;Web Analytics&quot;&amp;gt;&amp;lt;img src=&quot;http://riotgames.d1.sc.omtrdc.net/b/ss/riotgamesuniverse/1/H.26.2--NS/0/8922846&quot;
+height=&quot;1&quot; width=&quot;1&quot; border=&quot;0&quot; alt=&quot;&quot; /&amp;gt;&amp;lt;/a&amp;gt;
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">title :</span>
+        <span>
+                      Digi-Art Throwdown Contest | League of Legends
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">_version_ :</span>
+        <span>
+                      1465639980483215360
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">score :</span>
+        <span>
+                      0.0074914834
+                  </span>
+      </br>
+      </pre2>
+
+  
+</div>
+                  
+
+
+<div class="result-document">
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="result-title">
+      <img src="/solr/img/filetypes/false.png" align="center">
+
+    <a href="http://na.leagueoflegends.com/en/media/video/syndra-art-spotlight" target="_blank">
+    <b>Syndra Art Spotlight | League of Legends</b></a>
+
+    <span class="mlt">
+          <a href="?&debugQuery=true&q=id:%22http://na.leagueoflegends.com/en/media/video/syndra-art-spotlight%22&mlt=true">
+        More Like This</a>
+      </span>
+
+</div>
+
+<div>
+  Id:       http://na.leagueoflegends.com/en/media/video/syndra-art-spotlight      </div>
+
+<div>
+      URL: http://na.leagueoflegends.com/en/media/video/syndra-art-spotlight
+    </div>
+
+
+
+<div class="result-body">
+         of Legends - Syndra Art Spotlight 
+ 
+
+ 
+  Syndra Art Spotlight Syndra, the Dark Sovereign, transcends the <b>competition</b> in this high-speed capture of imposing splash art. 
+  Creative Spotlight      </div>
+
+<div class="mlt">
+        </div>  
+
+
+  <a href="#" onclick='jQuery(this).siblings("pre").toggle(); return false;'>
+    toggle explain</a>
+
+  <pre style="display:none">
+    
+0.007491484 = (MATCH) max of:
+  0.007491484 = (MATCH) weight(text:competition^0.5 in 406) [DefaultSimilarity], result of:
+    0.007491484 = score(doc=406,freq=1.0 = termFreq=1.0
+), product of:
+      0.026287818 = queryWeight, product of:
+        0.5 = boost
+        5.2110496 = idf(docFreq=109, maxDocs=7417)
+        0.0100892605 = queryNorm
+      0.28497928 = fieldWeight in 406, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        5.2110496 = idf(docFreq=109, maxDocs=7417)
+        0.0546875 = fieldNorm(doc=406)
+
+  </pre>
+
+  <a href="#" onclick='jQuery(this).siblings("pre2").toggle(); return false;'>
+    toggle all fields</a>
+
+  <pre2 style="display:none">
+          <br>
+        <span class="field-name">id :</span>
+        <span>
+                      http://na.leagueoflegends.com/en/media/video/syndra-art-spotlight
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">links :</span>
+        <span>
+                      http://na.leagueoflegends.com/en/media/video/syndra-art-spotlight
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">content :</span>
+        <span>
+                      Syndra Art Spotlight | League of Legends 
+ 
+ 
+
+
+
+
+ 
+ 
+    North America - English   Support Login Register  
+  &amp;lt;iframe src=&quot;//www.googletagmanager.com/ns.html?id=GTM-N98J&quot;
+ height=&quot;0&quot; width=&quot;0&quot; style=&quot;display:none;visibility:hidden&quot;&amp;gt;&amp;lt;/iframe&amp;gt; 
+ 
+  
+  Skip to main content 
+ 
+  
+ 
+  League of Legends 
+  
+  
+     
+   Game Info 
+      
+    
+    
+    
+    
+ 
+ Get Started 
+   
+ 
+ What is LoL? 
+  
+ 
+ New Player Guide 
+  
+ 
+ Chat Commands 
+  
+ 
+ Community Interaction 
+  
+ 
+ Summoner's Code 
+  
+ 
+  
+ 
+ Download 
+  
+ 
+ Server Status 
+  
+ 
+ Champions 
+  
+ 
+ Items 
+  
+ 
+ Summoners 
+   
+ 
+ Spells 
+  
+ 
+ Runes 
+  
+ 
+ Masteries 
+  
+ 
+  
+ 
+ Game Modes 
+   
+ 
+ Summoner's Rift 
+  
+ 
+ The Twisted Treeline 
+  
+ 
+ Howling Abyss 
+  
+ 
+ The Crystal Scar 
+  
+ 
+  
+ 
+    
+   
+     
+     
+   News 
+     
+     
+   Competitive 
+      
+    
+    
+    
+    
+ 
+ 2014 Season FAQ 
+  
+ 
+    
+   
+     
+     
+   Forums 
+      
+    
+    
+    
+    
+ 
+ Community Beta 
+  
+ 
+ Red Tracker 
+  
+ 
+ Announcements 
+  
+ 
+ General Discussion 
+  
+ 
+    
+   
+     
+     
+   Community 
+      
+    
+    
+    
+    
+ 
+ Viewing Parties 
+  
+ 
+ Prized Events 
+  
+ 
+ Featured Streamers 
+  
+ 
+ Collegiate Program 
+  
+ 
+ Tribunal 
+  
+ 
+ Refer a Friend 
+  
+ 
+ Public Beta Environment 
+  
+ 
+    
+   
+     
+     
+   Media 
+      
+    
+    
+    
+    
+ 
+ Videos 
+   
+ 
+ Patch Previews 
+  
+ 
+ Champion Spotlight 
+  
+ 
+ Summoner Showcases 
+  
+ 
+ Creative Spotlight 
+  
+ 
+ Fan Videos 
+  
+ 
+  
+ 
+ Art 
+   
+ 
+ Artwork 
+  
+ 
+ Screenshots 
+  
+ 
+ Wallpapers 
+  
+ 
+ Fan Art 
+  
+ 
+  
+ 
+    
+   
+     
+    
+  
+  Play Now 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+  You are here Home 
+ Media 
+ Video 
+ Creative Spotlight 
+  
+
+ 
+ 
+
+  
+   
+   
+ 
+    
+ 
+ Video of League of Legends - Syndra Art Spotlight 
+ 
+
+ 
+  Syndra Art Spotlight Syndra, the Dark Sovereign, transcends the competition in this high-speed capture of imposing splash art. 
+  Creative Spotlight 
+ 
+ 
+  
+ 
+ 
+          
+
+ 
+ 
+ 
+  2 years ago 
+ 
+ 
+   
+  
+  
+ 
+  
+    About League Of Legends 
+    Merchandise 
+    Prepaid Cards 
+    Refer a Friend 
+    Help Us Improve 
+    Server Status 
+    Tribunal 
+    Support 
+    Esports Pro Site 
+   
+  
+  
+   
+   Riot Games 
+   
+       
+               
+    YouTube.com
+    
+    
+       
+               
+    Twitter.com
+    
+    
+       
+               
+    Facebook.com
+    
+    
+      
+   
+  
+  
+   Play Now 
+   2013 Riot Games, Inc. All rights reserved. Riot Games, League of Legends and PvP.net are trademarks, services marks, or registered trademarks of Riot Games, Inc. 
+   
+      Eula 
+      Privacy Policy 
+      Terms Of Use 
+      Tribunal Policy 
+     
+  
+  
+   
+   PVP.net 
+   
+       Signup 
+       Support 
+      
+   
+  
+  
+  
+    
+   
+    
+   
+   
+    
+   
+    
+   
+   
+   
+ 
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+ &amp;lt;a href=&quot;http://www.omniture.com&quot; title=&quot;Web Analytics&quot;&amp;gt;&amp;lt;img src=&quot;http://riotgames.d1.sc.omtrdc.net/b/ss/riotgamesuniverse/1/H.26.2--NS/0/7010175&quot;
+height=&quot;1&quot; width=&quot;1&quot; border=&quot;0&quot; alt=&quot;&quot; /&amp;gt;&amp;lt;/a&amp;gt;
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">title :</span>
+        <span>
+                      Syndra Art Spotlight | League of Legends
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">_version_ :</span>
+        <span>
+                      1465639981242384384
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">score :</span>
+        <span>
+                      0.0074914834
+                  </span>
+      </br>
+      </pre2>
+
+  
+</div>
+                  
+
+
+<div class="result-document">
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="result-title">
+      <img src="/solr/img/filetypes/false.png" align="center">
+
+    <a href="http://na.leagueoflegends.com/en/news/esports/esports-event" target="_blank">
+    <b>eSports Event | League of Legends</b></a>
+
+    <span class="mlt">
+          <a href="?&debugQuery=true&q=id:%22http://na.leagueoflegends.com/en/news/esports/esports-event%22&mlt=true">
+        More Like This</a>
+      </span>
+
+</div>
+
+<div>
+  Id:       http://na.leagueoflegends.com/en/news/esports/esports-event      </div>
+
+<div>
+      URL: http://na.leagueoflegends.com/en/news/esports/esports-event
+    </div>
+
+
+
+<div class="result-body">
+         Zenith Arena, a new format will feature the All-Star Invitational and All-Star Challenge. With these changes, the event will showcase <b>competition</b> from both the top teams and the favorite pro-players from     ...  each region in four days of <b>competition</b>.
+  1 month ago  
+ 
+  
+ 
+ 
+ 
+   
+  
+ 
+ 
+  
+ 
+  
+ 
+ 
+   
+
+ 
+ 
+ 
+  2014 World Championship heads to South Korea With the preseason about to kick off, we&#x27;re ready to     ...   
+ 
+  
+ 
+ 
+ 
+   
+  
+ 
+ 
+  
+ 
+  
+ 
+ 
+   
+
+ 
+ 
+ 
+  Season 3 World Championship kicks off September 15 Fourteen contenders rose above the <b>competition</b> in regional qualifiers across the world. On September 15th their journey to the finals begins. Who will      </div>
+
+<div class="mlt">
+        </div>  
+
+
+  <a href="#" onclick='jQuery(this).siblings("pre").toggle(); return false;'>
+    toggle explain</a>
+
+  <pre style="display:none">
+    
+0.0074146455 = (MATCH) max of:
+  0.0074146455 = (MATCH) weight(text:competition^0.5 in 453) [DefaultSimilarity], result of:
+    0.0074146455 = score(doc=453,freq=3.0 = termFreq=3.0
+), product of:
+      0.026287818 = queryWeight, product of:
+        0.5 = boost
+        5.2110496 = idf(docFreq=109, maxDocs=7417)
+        0.0100892605 = queryNorm
+      0.28205633 = fieldWeight in 453, product of:
+        1.7320508 = tf(freq=3.0), with freq of:
+          3.0 = termFreq=3.0
+        5.2110496 = idf(docFreq=109, maxDocs=7417)
+        0.03125 = fieldNorm(doc=453)
+
+  </pre>
+
+  <a href="#" onclick='jQuery(this).siblings("pre2").toggle(); return false;'>
+    toggle all fields</a>
+
+  <pre2 style="display:none">
+          <br>
+        <span class="field-name">id :</span>
+        <span>
+                      http://na.leagueoflegends.com/en/news/esports/esports-event
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">links :</span>
+        <span>
+                      http://na.leagueoflegends.com/en/news/esports/esports-event
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">content :</span>
+        <span>
+                      eSports Event | League of Legends 
+ 
+ 
+
+
+
+
+ 
+ 
+   North America - English   Support Login Register  
+  &amp;lt;iframe src=&quot;//www.googletagmanager.com/ns.html?id=GTM-N98J&quot;
+ height=&quot;0&quot; width=&quot;0&quot; style=&quot;display:none;visibility:hidden&quot;&amp;gt;&amp;lt;/iframe&amp;gt; 
+ 
+  
+  Skip to main content 
+ 
+  
+ 
+  League of Legends 
+  
+  
+     
+   Game Info 
+      
+    
+    
+    
+    
+ 
+ Get Started 
+   
+ 
+ What is LoL? 
+  
+ 
+ New Player Guide 
+  
+ 
+ Chat Commands 
+  
+ 
+ Community Interaction 
+  
+ 
+ Summoner's Code 
+  
+ 
+  
+ 
+ Download 
+  
+ 
+ Server Status 
+  
+ 
+ Champions 
+  
+ 
+ Items 
+  
+ 
+ Summoners 
+   
+ 
+ Spells 
+  
+ 
+ Runes 
+  
+ 
+ Masteries 
+  
+ 
+  
+ 
+ Game Modes 
+   
+ 
+ Summoner's Rift 
+  
+ 
+ The Twisted Treeline 
+  
+ 
+ Howling Abyss 
+  
+ 
+ The Crystal Scar 
+  
+ 
+  
+ 
+    
+   
+     
+     
+   News 
+     
+     
+   Competitive 
+      
+    
+    
+    
+    
+ 
+ 2014 Season FAQ 
+  
+ 
+    
+   
+     
+     
+   Forums 
+      
+    
+    
+    
+    
+ 
+ Community Beta 
+  
+ 
+ Red Tracker 
+  
+ 
+ Announcements 
+  
+ 
+ General Discussion 
+  
+ 
+    
+   
+     
+     
+   Community 
+      
+    
+    
+    
+    
+ 
+ Viewing Parties 
+  
+ 
+ Prized Events 
+  
+ 
+ Featured Streamers 
+  
+ 
+ Collegiate Program 
+  
+ 
+ Tribunal 
+  
+ 
+ Refer a Friend 
+  
+ 
+ Public Beta Environment 
+  
+ 
+    
+   
+     
+     
+   Media 
+      
+    
+    
+    
+    
+ 
+ Videos 
+   
+ 
+ Patch Previews 
+  
+ 
+ Champion Spotlight 
+  
+ 
+ Summoner Showcases 
+  
+ 
+ Creative Spotlight 
+  
+ 
+ Fan Videos 
+  
+ 
+  
+ 
+ Art 
+   
+ 
+ Artwork 
+  
+ 
+ Screenshots 
+  
+ 
+ Wallpapers 
+  
+ 
+ Fan Art 
+  
+ 
+  
+ 
+    
+   
+     
+    
+  
+  Play Now 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+  You are here Home 
+ News 
+ Esports 
+ eSports Event 
+ 
+
+ 
+ 
+
+  
+   
+   
+ 
+  Most Recent eSports Event News 
+  
+ 
+ 
+   
+ 
+ 
+   
+  
+ 
+ 
+  
+ 
+  
+ 
+ 
+   
+
+ 
+ 
+ 
+  The 2014 LCS Season is on! Action on the Rift this season is searing hot! For up-to-date news, analysis, bios, and schedules, click here!  1 day ago  
+ 
+  
+ 
+ 
+ 
+   
+  
+ 
+ 
+  
+ 
+  
+ 
+ 
+   
+
+ 
+ 
+ 
+  All-Star Schedule Live and Tickets On Sale in 48 Hours The All-Star Paris 2014 schedule is now available. Start your countdowns! In 48 hours, tickets will go on sale. The event spans from Thursday May 8 to Sunday May 11 at Le Zenith Arena in Paris, France.  19 days ago  
+ 
+  
+ 
+ 
+ 
+   
+  
+ 
+ 
+  
+ 
+  
+ 
+ 
+   
+
+ 
+ 
+ 
+  Voting for the All-Star Challenge Excited about our all-new All-Star Challenge? Click here to find out everything you need to know about casting your votes to influence this new and exciting style of All-Star play.  19 days ago  
+ 
+  
+ 
+ 
+ 
+   
+  
+ 
+ 
+  
+ 
+  
+ 
+ 
+   
+
+ 
+ 
+ 
+  All-Star 2014 heads to Paris, France We're excited to announce that the 2014 League of Legends All-Star event will be held in Paris, France. Taking place from Thursday, May 8 to Sunday, May 11 at Le Zenith Arena, a new format will feature the All-Star Invitational and All-Star Challenge. With these changes, the event will showcase competition from both the top teams and the favorite pro-players from each region in four days of competition.
+  1 month ago  
+ 
+  
+ 
+ 
+ 
+   
+  
+ 
+ 
+  
+ 
+  
+ 
+ 
+   
+
+ 
+ 
+ 
+  2014 World Championship heads to South Korea With the preseason about to kick off, we're ready to announce that the 2014 World Championship will be held in South Korea.  5 months ago  
+ 
+  
+ 
+ 
+ 
+   
+  
+ 
+ 
+  
+ 
+  
+ 
+ 
+   
+
+ 
+ 
+ 
+  The Season 3 World Championship preview The Season 3 World Championship arrives at the Staples Center this Friday. Korea's SK Telecom T1 and China's Royal Club proved themselves the top teams on the planet and now they'll duel for the Summoner's Cup. Catch up on the semifinal action and preview the Championship right here.  7 months ago  
+ 
+  
+ 
+ 
+ 
+   
+  
+ 
+ 
+  
+ 
+  
+ 
+ 
+   
+
+ 
+ 
+ 
+  The Season 3 semifinals are here The world's top four teams have fought their way through the quarter finals and are prepping for a semifinal showdown at the Galen Center. These are the matchups, times and dates of the World Championship semifinals.  7 months ago  
+ 
+  
+ 
+ 
+ 
+   
+  
+ 
+ 
+  
+ 
+  
+ 
+ 
+   
+
+ 
+ 
+ 
+  Roku owners: try our beta S3 World Championship channel Catch all of the Season 3 World Championship action in HD for a limited time wherever you have a Roku box!  7 months ago  
+ 
+  
+ 
+ 
+ 
+   
+  
+ 
+ 
+  
+ 
+  
+ 
+ 
+   
+
+ 
+ 
+ 
+  Season 3 World Championship kicks off September 15 Fourteen contenders rose above the competition in regional qualifiers across the world. On September 15th their journey to the finals begins. Who will rise and be crowned Season Three Champions?  7 months ago  
+ 
+  
+ 
+ 
+ 
+   
+  
+ 
+ 
+  
+ 
+  
+ 
+ 
+   
+
+ 
+ 
+ 
+  North American Regionals kicking off soon  With several Regional Playoffs won and done, the traffic on the Road to Worlds is clearing up and we're starting to see who's in the fast lane to LA and who's taking the exit into the offseason. Now it's North America's turn to find out which teams are in the driver's seat.  8 months ago  
+ 
+  
+ 
+   1 2 3  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+  
+  
+ 
+  
+    About League Of Legends 
+    Merchandise 
+    Prepaid Cards 
+    Refer a Friend 
+    Help Us Improve 
+    Server Status 
+    Tribunal 
+    Support 
+    Esports Pro Site 
+   
+  
+  
+   
+   Riot Games 
+   
+       
+               
+    YouTube.com
+    
+    
+       
+               
+    Twitter.com
+    
+    
+       
+               
+    Facebook.com
+    
+    
+      
+   
+  
+  
+   Play Now 
+   2013 Riot Games, Inc. All rights reserved. Riot Games, League of Legends and PvP.net are trademarks, services marks, or registered trademarks of Riot Games, Inc. 
+   
+      Eula 
+      Privacy Policy 
+      Terms Of Use 
+      Tribunal Policy 
+     
+  
+  
+   
+   PVP.net 
+   
+       Signup 
+       Support 
+      
+   
+  
+  
+  
+    
+   
+    
+   
+   
+    
+   
+    
+   
+   
+   
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+ &amp;lt;a href=&quot;http://www.omniture.com&quot; title=&quot;Web Analytics&quot;&amp;gt;&amp;lt;img src=&quot;http://riotgames.d1.sc.omtrdc.net/b/ss/riotgamesuniverse/1/H.26.2--NS/0/3874214&quot;
+height=&quot;1&quot; width=&quot;1&quot; border=&quot;0&quot; alt=&quot;&quot; /&amp;gt;&amp;lt;/a&amp;gt;
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">title :</span>
+        <span>
+                      eSports Event | League of Legends
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">_version_ :</span>
+        <span>
+                      1465639981984776192
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">score :</span>
+        <span>
+                      0.007414645
+                  </span>
+      </br>
+      </pre2>
+
+  
+</div>
+                  
+
+
+<div class="result-document">
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="result-title">
+      <img src="/solr/img/filetypes/false.png" align="center">
+
+    <a href="http://leagueoflegends.wikia.com/wiki/Matt_%27RiotMarcou%27_Marcou" target="_blank">
+    <b>wiki Matt  27RiotMarcou 27 Marcou</b></a>
+
+    <span class="mlt">
+          <a href="?&debugQuery=true&q=id:%22http://leagueoflegends.wikia.com/wiki/Matt_%27RiotMarcou%27_Marcou%22&mlt=true">
+        More Like This</a>
+      </span>
+
+</div>
+
+<div>
+  Id:       http://leagueoflegends.wikia.com/wiki/Matt_%27RiotMarcou%27_Marcou      </div>
+
+<div>
+      URL: http://leagueoflegends.wikia.com/wiki/Matt_%27RiotMarcou%27_Marcou
+    </div>
+
+
+
+<div class="result-body">
+        
+:
+Hypothetical
+Argument
++20
+Profile
+Matt
+was
+born
+in
+a
+teepee
+among
+the
+Indian
+tribe
+of
+Milwaukee
+where
+he
+lived
+for
+25
+years,
+working
+out
+and
+building
+his
+&quot;e&quot;
+muscles
+for
+&quot;e&quot;
+<b>competition</b>.
+However,
+he
+loved      </div>
+
+<div class="mlt">
+        </div>  
+
+
+  <a href="#" onclick='jQuery(this).siblings("pre").toggle(); return false;'>
+    toggle explain</a>
+
+  <pre style="display:none">
+    
+0.0064212712 = (MATCH) max of:
+  0.0064212712 = (MATCH) weight(text:competition^0.5 in 2487) [DefaultSimilarity], result of:
+    0.0064212712 = score(doc=2487,freq=1.0 = termFreq=1.0
+), product of:
+      0.026287818 = queryWeight, product of:
+        0.5 = boost
+        5.2110496 = idf(docFreq=109, maxDocs=7417)
+        0.0100892605 = queryNorm
+      0.24426794 = fieldWeight in 2487, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        5.2110496 = idf(docFreq=109, maxDocs=7417)
+        0.046875 = fieldNorm(doc=2487)
+
+  </pre>
+
+  <a href="#" onclick='jQuery(this).siblings("pre2").toggle(); return false;'>
+    toggle all fields</a>
+
+  <pre2 style="display:none">
+          <br>
+        <span class="field-name">id :</span>
+        <span>
+                      http://leagueoflegends.wikia.com/wiki/Matt_%27RiotMarcou%27_Marcou
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">links :</span>
+        <span>
+                      http://leagueoflegends.wikia.com/wiki/Matt_%27RiotMarcou%27_Marcou
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">content :</span>
+        <span>
+                      http://leagueoflegends.wikia.com/wiki/Matt_%27RiotMarcou%27_Marcou
+Matt
+'RiotMarcou'
+Marcou
+-
+League
+of
+Legends
+Wiki
+-
+Champions,
+Items,
+Strategies,
+and
+many
+more!
+Skip
+to
+Content
+Skip
+to
+Wiki
+Navigation
+Skip
+to
+Site
+Navigation
+Start
+a
+wiki
+Video
+Games
+Entertainment
+Lifestyle
+Log
+in
+Or
+Connect
+Sign
+up
+On
+the
+Wiki
+Wiki
+Activity
+Random
+page
+Videos
+Photos
+Chat
+Forum
+League
+of
+Legends
+Champions
+Free
+champion
+rotation
+Backgrounds
+Strategies
+Ability
+Details
+Trivia
+Skins
+Judgements
+Fields
+of
+Justice
+Summoner's
+Rift
+Twisted
+Treeline
+Crystal
+Scar
+Howling
+Abyss
+Proving
+Grounds
+Magma
+Chamber
+Items
+Basic
+Advanced
+Legendary
+Mythical
+Consumables
+Removed
+Minions
+Melee
+Caster
+Siege
+Super
+Masteries
+Offense
+Defense
+Utility
+Spells
+Help
+Desk
+Wikia
+Help
+Forums
+Wiki
+discussions
+and
+announcements
+League
+of
+Legends
+discussions
+Wiki
+issues
+archive
+In-Game
+Help
+Glossary
+Hotkeys
+and
+commands
+Troubleshooting
+Wiki
+Policies
+Basic
+Wiki
+Rules
+Chat
+Policy
+Discussion
+policy
+Image
+policy
+Manual
+of
+Style
+Community
+User
+Rights
+Requests
+for
+Permissions
+Administrator
+Noticeboard
+Forums
+Wiki
+discussions
+and
+announcements
+League
+of
+Legends
+discussions
+Wiki
+issues
+archive
+Blogs
+Contribute
+Add
+a
+Video
+Add
+a
+Photo
+Add
+a
+Page
+Wiki
+Activity
+Share
+Watchlist
+Random
+page
+Recent
+changes
+Matt
+'RiotMarcou'
+Marcou
+Edit
+History
+Comments
+3
+1,792
+pages
+on
+this
+wiki
+Matt
+Marcou
+is
+currently
+working
+as
+the
+eSports
+Manager
+of
+Riot
+Games
+.
+Skills
+:
+Hypothetical
+Argument
++20
+Profile
+Matt
+was
+born
+in
+a
+teepee
+among
+the
+Indian
+tribe
+of
+Milwaukee
+where
+he
+lived
+for
+25
+years,
+working
+out
+and
+building
+his
+&quot;e&quot;
+muscles
+for
+&quot;e&quot;
+competition.
+However,
+he
+loved
+playing
+with
+Fire
+(and
+Ice)
+-
+and
+discovered
+his
+true
+calling
+in
+running
+eSports
+competitions
+and
+managing
+eSports
+teams.
+Before
+taking
+management
+of
+Evil
+Geniuses,
+Matt
+sponsored
+his
+own
+group
+of
+fledgling
+pros,
+known
+as
+VerGe
+Gaming.
+Matt
+comes
+to
+us
+from
+the
+professional
+wrestling
+organization,
+SteelSeries,
+and
+is
+very
+well
+known
+and
+respected
+in
+the
+DotA
+and
+eSports
+community.
+Special
+Ability
+Pro-Gamer
+Crowd
+Control
+:
+Even
+under
+times
+of
+great
+stress,
+Matt
+has
+the
+ability
+to
+marshall
+any
+group
+of
+even
+the
+most
+unruly
+gamers
+into
+an
+exciting
+tournament.
+League
+of
+Legends:
+Marketing
+Marketing
+Chris
+Enock
+Chris
+Heintz
+Matt
+'RiotMarcou'
+Marcou
+Andy
+Ho
+Jeffrey
+Pfingsten
+Laura
+'Moneypenny'
+Brown
+Kevin
+Cheung
+Retrieved
+from
+&quot;
+http://leagueoflegends.wikia.com/wiki/Matt_%27RiotMarcou%27_Marcou?oldid=1528880
+&quot;
+Categories
+:
+Riot
+Games
+staff
+Advertisement
+|
+Your
+ad
+here
+Around
+Wikia's
+network
+Random
+Wiki
+Wikia
+Inc
+Navigation
+[
+Video
+Games
+]
+About
+Community
+Central
+Careers
+Advertise
+API
+Contact
+Wikia
+Terms
+of
+Use
+Privacy
+Policy
+Content
+is
+available
+under
+CC-BY-SA
+.
+Video
+Games
+Entertainment
+Lifestyle
+
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">title :</span>
+        <span>
+                      wiki Matt  27RiotMarcou 27 Marcou
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">_version_ :</span>
+        <span>
+                      1465488462727610368
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">score :</span>
+        <span>
+                      0.0064212712
+                  </span>
+      </br>
+      </pre2>
+
+  
+</div>
+                  
+
+
+<div class="result-document">
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="result-title">
+      <img src="/solr/img/filetypes/false.png" align="center">
+
+    <a href="http://leagueoflegends.wikia.com/wiki/Matt_Marcou" target="_blank">
+    <b>wiki Matt Marcou</b></a>
+
+    <span class="mlt">
+          <a href="?&debugQuery=true&q=id:%22http://leagueoflegends.wikia.com/wiki/Matt_Marcou%22&mlt=true">
+        More Like This</a>
+      </span>
+
+</div>
+
+<div>
+  Id:       http://leagueoflegends.wikia.com/wiki/Matt_Marcou      </div>
+
+<div>
+      URL: http://leagueoflegends.wikia.com/wiki/Matt_Marcou
+    </div>
+
+
+
+<div class="result-body">
+        
+:
+Hypothetical
+Argument
++20
+Profile
+Matt
+was
+born
+in
+a
+teepee
+among
+the
+Indian
+tribe
+of
+Milwaukee
+where
+he
+lived
+for
+25
+years,
+working
+out
+and
+building
+his
+&quot;e&quot;
+muscles
+for
+&quot;e&quot;
+<b>competition</b>.
+However,
+he
+loved      </div>
+
+<div class="mlt">
+        </div>  
+
+
+  <a href="#" onclick='jQuery(this).siblings("pre").toggle(); return false;'>
+    toggle explain</a>
+
+  <pre style="display:none">
+    
+0.0064212712 = (MATCH) max of:
+  0.0064212712 = (MATCH) weight(text:competition^0.5 in 2488) [DefaultSimilarity], result of:
+    0.0064212712 = score(doc=2488,freq=1.0 = termFreq=1.0
+), product of:
+      0.026287818 = queryWeight, product of:
+        0.5 = boost
+        5.2110496 = idf(docFreq=109, maxDocs=7417)
+        0.0100892605 = queryNorm
+      0.24426794 = fieldWeight in 2488, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        5.2110496 = idf(docFreq=109, maxDocs=7417)
+        0.046875 = fieldNorm(doc=2488)
+
+  </pre>
+
+  <a href="#" onclick='jQuery(this).siblings("pre2").toggle(); return false;'>
+    toggle all fields</a>
+
+  <pre2 style="display:none">
+          <br>
+        <span class="field-name">id :</span>
+        <span>
+                      http://leagueoflegends.wikia.com/wiki/Matt_Marcou
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">links :</span>
+        <span>
+                      http://leagueoflegends.wikia.com/wiki/Matt_Marcou
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">content :</span>
+        <span>
+                      http://leagueoflegends.wikia.com/wiki/Matt_Marcou
+Matt
+'RiotMarcou'
+Marcou
+-
+League
+of
+Legends
+Wiki
+-
+Champions,
+Items,
+Strategies,
+and
+many
+more!
+Skip
+to
+Content
+Skip
+to
+Wiki
+Navigation
+Skip
+to
+Site
+Navigation
+Start
+a
+wiki
+Video
+Games
+Entertainment
+Lifestyle
+Log
+in
+Or
+Connect
+Sign
+up
+On
+the
+Wiki
+Wiki
+Activity
+Random
+page
+Videos
+Photos
+Chat
+Forum
+League
+of
+Legends
+Champions
+Free
+champion
+rotation
+Backgrounds
+Strategies
+Ability
+Details
+Trivia
+Skins
+Judgements
+Fields
+of
+Justice
+Summoner's
+Rift
+Twisted
+Treeline
+Crystal
+Scar
+Howling
+Abyss
+Proving
+Grounds
+Magma
+Chamber
+Items
+Basic
+Advanced
+Legendary
+Mythical
+Consumables
+Removed
+Minions
+Melee
+Caster
+Siege
+Super
+Masteries
+Offense
+Defense
+Utility
+Spells
+Help
+Desk
+Wikia
+Help
+Forums
+Wiki
+discussions
+and
+announcements
+League
+of
+Legends
+discussions
+Wiki
+issues
+archive
+In-Game
+Help
+Glossary
+Hotkeys
+and
+commands
+Troubleshooting
+Wiki
+Policies
+Basic
+Wiki
+Rules
+Chat
+Policy
+Discussion
+policy
+Image
+policy
+Manual
+of
+Style
+Community
+User
+Rights
+Requests
+for
+Permissions
+Administrator
+Noticeboard
+Forums
+Wiki
+discussions
+and
+announcements
+League
+of
+Legends
+discussions
+Wiki
+issues
+archive
+Blogs
+Contribute
+Add
+a
+Video
+Add
+a
+Photo
+Add
+a
+Page
+Wiki
+Activity
+Share
+Watchlist
+Random
+page
+Recent
+changes
+Matt
+'RiotMarcou'
+Marcou
+Edit
+History
+Comments
+3
+1,792
+pages
+on
+this
+wiki
+Redirected
+from
+Matt
+Marcou
+Matt
+Marcou
+is
+currently
+working
+as
+the
+eSports
+Manager
+of
+Riot
+Games
+.
+Skills
+:
+Hypothetical
+Argument
++20
+Profile
+Matt
+was
+born
+in
+a
+teepee
+among
+the
+Indian
+tribe
+of
+Milwaukee
+where
+he
+lived
+for
+25
+years,
+working
+out
+and
+building
+his
+&quot;e&quot;
+muscles
+for
+&quot;e&quot;
+competition.
+However,
+he
+loved
+playing
+with
+Fire
+(and
+Ice)
+-
+and
+discovered
+his
+true
+calling
+in
+running
+eSports
+competitions
+and
+managing
+eSports
+teams.
+Before
+taking
+management
+of
+Evil
+Geniuses,
+Matt
+sponsored
+his
+own
+group
+of
+fledgling
+pros,
+known
+as
+VerGe
+Gaming.
+Matt
+comes
+to
+us
+from
+the
+professional
+wrestling
+organization,
+SteelSeries,
+and
+is
+very
+well
+known
+and
+respected
+in
+the
+DotA
+and
+eSports
+community.
+Special
+Ability
+Pro-Gamer
+Crowd
+Control
+:
+Even
+under
+times
+of
+great
+stress,
+Matt
+has
+the
+ability
+to
+marshall
+any
+group
+of
+even
+the
+most
+unruly
+gamers
+into
+an
+exciting
+tournament.
+League
+of
+Legends:
+Marketing
+Marketing
+Chris
+Enock
+Chris
+Heintz
+Matt
+'RiotMarcou'
+Marcou
+Andy
+Ho
+Jeffrey
+Pfingsten
+Laura
+'Moneypenny'
+Brown
+Kevin
+Cheung
+Retrieved
+from
+&quot;
+http://leagueoflegends.wikia.com/wiki/Matt_%27RiotMarcou%27_Marcou?oldid=1528880
+&quot;
+Categories
+:
+Riot
+Games
+staff
+Advertisement
+|
+Your
+ad
+here
+Around
+Wikia's
+network
+Random
+Wiki
+Wikia
+Inc
+Navigation
+[
+Video
+Games
+]
+About
+Community
+Central
+Careers
+Advertise
+API
+Contact
+Wikia
+Terms
+of
+Use
+Privacy
+Policy
+Content
+is
+available
+under
+CC-BY-SA
+.
+Video
+Games
+Entertainment
+Lifestyle
+
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">title :</span>
+        <span>
+                      wiki Matt Marcou
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">_version_ :</span>
+        <span>
+                      1465488462735998976
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">score :</span>
+        <span>
+                      0.0064212712
+                  </span>
+      </br>
+      </pre2>
+
+  
+</div>
+                  
+
+
+<div class="result-document">
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="result-title">
+      <img src="/solr/img/filetypes/false.png" align="center">
+
+    <a href="http://leagueoflegends.wikia.com/wiki/Taipei_Assassins" target="_blank">
+    <b>wiki Taipei Assassins</b></a>
+
+    <span class="mlt">
+          <a href="?&debugQuery=true&q=id:%22http://leagueoflegends.wikia.com/wiki/Taipei_Assassins%22&mlt=true">
+        More Like This</a>
+      </span>
+
+</div>
+
+<div>
+  Id:       http://leagueoflegends.wikia.com/wiki/Taipei_Assassins      </div>
+
+<div>
+      URL: http://leagueoflegends.wikia.com/wiki/Taipei_Assassins
+    </div>
+
+
+
+<div class="result-body">
+        
+CLG
+member
+Lilballz,
+forming
+team
+FTW
+(
+For
+The
+Win
+).
+The
+team
+competed
+in
+Garena&#x27;s
+G1
+eSports
+<b>competition</b>,
+and
+was
+crowned
+#1
+out
+of
+150
+teams,
+qualifying
+for
+the
+World
+Cyber
+Games
+2011.
+Garena     ... 
+Azubu
+and
+began
+to
+play
+under
+the
+name
+Azubu
+TaipeiAssassins.
+On
+April
+4th
+they
+took
+1st
+place
+at
+2013
+GPL
+Spring
+.
+Notable
+Achievements
+1
+st
+place
+winner
+at
+Garena&#x27;s
+G1
+eSports
+<b>competition</b>
+1
+1st
+place      </div>
+
+<div class="mlt">
+        </div>  
+
+
+  <a href="#" onclick='jQuery(this).siblings("pre").toggle(); return false;'>
+    toggle explain</a>
+
+  <pre style="display:none">
+    
+0.0060540326 = (MATCH) max of:
+  0.0060540326 = (MATCH) weight(text:competition^0.5 in 190) [DefaultSimilarity], result of:
+    0.0060540326 = score(doc=190,freq=2.0 = termFreq=2.0
+), product of:
+      0.026287818 = queryWeight, product of:
+        0.5 = boost
+        5.2110496 = idf(docFreq=109, maxDocs=7417)
+        0.0100892605 = queryNorm
+      0.23029803 = fieldWeight in 190, product of:
+        1.4142135 = tf(freq=2.0), with freq of:
+          2.0 = termFreq=2.0
+        5.2110496 = idf(docFreq=109, maxDocs=7417)
+        0.03125 = fieldNorm(doc=190)
+
+  </pre>
+
+  <a href="#" onclick='jQuery(this).siblings("pre2").toggle(); return false;'>
+    toggle all fields</a>
+
+  <pre2 style="display:none">
+          <br>
+        <span class="field-name">id :</span>
+        <span>
+                      http://leagueoflegends.wikia.com/wiki/Taipei_Assassins
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">links :</span>
+        <span>
+                      http://leagueoflegends.wikia.com/wiki/Taipei_Assassins
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">content :</span>
+        <span>
+                      http://leagueoflegends.wikia.com/wiki/Taipei_Assassins
+Taipei
+Assassins
+-
+League
+of
+Legends
+Wiki
+-
+Champions,
+Items,
+Strategies,
+and
+many
+more!
+Skip
+to
+Content
+Skip
+to
+Wiki
+Navigation
+Skip
+to
+Site
+Navigation
+Start
+a
+wiki
+Video
+Games
+Entertainment
+Lifestyle
+Log
+in
+Or
+Connect
+Sign
+up
+On
+the
+Wiki
+Wiki
+Activity
+Random
+page
+Videos
+Photos
+Chat
+Forum
+League
+of
+Legends
+Champions
+Free
+champion
+rotation
+Backgrounds
+Strategies
+Ability
+Details
+Trivia
+Skins
+Judgements
+Fields
+of
+Justice
+Summoner's
+Rift
+Twisted
+Treeline
+Crystal
+Scar
+Howling
+Abyss
+Proving
+Grounds
+Magma
+Chamber
+Items
+Basic
+Advanced
+Legendary
+Mythical
+Consumables
+Removed
+Minions
+Melee
+Caster
+Siege
+Super
+Masteries
+Offense
+Defense
+Utility
+Spells
+Help
+Desk
+Wikia
+Help
+Forums
+Wiki
+discussions
+and
+announcements
+League
+of
+Legends
+discussions
+Wiki
+issues
+archive
+In-Game
+Help
+Glossary
+Hotkeys
+and
+commands
+Troubleshooting
+Wiki
+Policies
+Basic
+Wiki
+Rules
+Chat
+Policy
+Discussion
+policy
+Image
+policy
+Manual
+of
+Style
+Community
+User
+Rights
+Requests
+for
+Permissions
+Administrator
+Noticeboard
+Forums
+Wiki
+discussions
+and
+announcements
+League
+of
+Legends
+discussions
+Wiki
+issues
+archive
+Blogs
+Contribute
+Add
+a
+Video
+Add
+a
+Photo
+Add
+a
+Page
+Wiki
+Activity
+Share
+Watchlist
+Random
+page
+Recent
+changes
+Taipei
+Assassins
+Edit
+History
+Comments
+7
+1,791
+pages
+on
+this
+wiki
+&quot;Hugify!&quot;
+This
+article
+is
+a
+stub
+.
+You
+can
+help
+the
+League
+of
+Legends
+Wiki
+by
+casting
+Wild
+Growth
+on
+it
+so
+it
+isn't
+as
+small
+as
+a
+yordle.
+Taipei
+Assassins
+Background
+Information
+Region:
+Southeast
+Asia
+Members:
+Toyz
+(captain)
+Stanley
+Lilballz
+DinTer
+Bebeisadog
+Sarsky
+Website
+http://taipeiassassins.tw/
+Sponsor:
+Garena
+Azubu
+History
+Former
+players
+MiSTakE
+Created:
+September
+2011
+Contents
+[
+show
+]
+Line
+Up
+ID
+Name
+Role
+Toyz
+Kurtis
+Lau
+AP
+Stanley
+Wang
+June
+Tsan
+Top
+Lilballz
+Alex
+Sung
+Jungle
+Sarsky
+Lo
+&quot;Allen&quot;
+Chong-Yu
+Jungle
+DinTer
+Hong-Wei
+Xue
+Support
+Bebe
+Cheng
+Bo
+Wei
+AD
+Bio
+Through
+League
+of
+Legends,
+leader
+Mistake
+met
+fellow
+Taiwanese
+player
+Stanley
+in
+a
+ranked
+game.
+Their
+mutual
+friend
+Colalin
+then
+introduced
+NeXAbc
+and
+former
+CLG
+member
+Lilballz,
+forming
+team
+FTW
+(
+For
+The
+Win
+).
+The
+team
+competed
+in
+Garena's
+G1
+eSports
+competition,
+and
+was
+crowned
+#1
+out
+of
+150
+teams,
+qualifying
+for
+the
+World
+Cyber
+Games
+2011.
+Garena
+noticed
+their
+outstanding
+performance
+and
+signed
+the
+team
+along
+with
+Bebeisadog
+and
+Toyz,
+forming
+Taiwan's
+first
+LoL
+Pro
+Gaming
+Team:
+Taipei
+Assassins
+.
+The
+team
+would
+go
+on
+to
+play
+very
+successfully
+in
+the
+Taiwanese
+Qualifiers
+and
+Regional
+Finals,
+which
+let
+them
+enter
+the
+Season
+Two
+Championship.
+Season
+Two
+World
+Championship
+Taipei
+Assassin
+competed
+in
+the
+Season
+2
+World
+championship,
+defeating
+Najin
+Sword
+with
+a
+score
+of
+2-0
+in
+their
+first
+matchup.
+Taipei
+Assassins
+went
+on
+to
+face
+Azubu
+Frost
+in
+the
+Grand
+Finals
+of
+the
+Season
+Two
+Championship
+.
+After
+losing
+the
+first
+round,
+the
+Taipei
+Assassins
+went
+on
+to
+win
+3
+consecutive
+victories
+in
+the
+best
+of
+5
+match
+up
+and
+became
+the
+World
+Champions
+of
+Season
+2.
+2012
+GPL
+Season
+1
+The
+Taipei
+Assassins
+continued
+to
+be
+a
+strong
+team.
+On
+November
+17th
+they
+entered
+the
+2012
+GPL
+Season
+1
+playoffs
+in
+Singapore
+and
+were
+seeded
+directly
+into
+the
+finals
+due
+to
+their
+seasonal
+record.
+The
+final
+showdown
+took
+place
+between
+Taipei
+Assassins
+and
+the
+Singapore
+Sentinels
+,
+who
+defeated
+the
+Saigon
+Jokers
+in
+the
+semi
+finals.
+Proving
+their
+strength
+again
+the
+Taipei
+Assassins
+went
+3-1
+in
+the
+best
+of
+5
+and
+earned
+1st
+place.
+Season
+Three
+At
+the
+beginning
+of
+2013
+Taipei
+Assassin's
+captain,
+MiSTakE
+,
+left
+the
+team
+with
+three
+of
+the
+team's
+subs
+to
+form
+their
+sister
+team
+-
+the
+Taipei
+Snipers
+.
+Toyz
+then
+became
+the
+new
+captain
+for
+the
+team.
+In
+March
+Taipei
+Assassins
+became
+sponsored
+by
+Azubu
+and
+began
+to
+play
+under
+the
+name
+Azubu
+TaipeiAssassins.
+On
+April
+4th
+they
+took
+1st
+place
+at
+2013
+GPL
+Spring
+.
+Notable
+Achievements
+1
+st
+place
+winner
+at
+Garena's
+G1
+eSports
+competition
+1
+1st
+place
+winner
+ot
+the
+IPL5
+Taiwanese
+Qualifiers
+1
+st
+place
+winner
+of
+the
+Season
+Two
+Taiwanese
+Regional
+Finals
+1
+st
+place
+winner
+of
+the
+Season
+Two
+World
+Championship
+1
+st
+place
+winner
+at
+2012
+GPL
+Season
+1
+1
+st
+place
+winner
+at
+2013
+GPL
+Spring
+Retrieved
+from
+&quot;
+http://leagueoflegends.wikia.com/wiki/Taipei_Assassins?oldid=1983384
+&quot;
+Categories
+:
+Article
+stubs
+Teams
+from
+Southeast
+Asia
+Advertisement
+|
+Your
+ad
+here
+Around
+Wikia's
+network
+Random
+Wiki
+Wikia
+Inc
+Navigation
+[
+Video
+Games
+]
+About
+Community
+Central
+Careers
+Advertise
+API
+Contact
+Wikia
+Terms
+of
+Use
+Privacy
+Policy
+Content
+is
+available
+under
+CC-BY-SA
+.
+Community
+Messages
+have
+been
+updated
+.
+Video
+Games
+Entertainment
+Lifestyle
+
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">title :</span>
+        <span>
+                      wiki Taipei Assassins
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">_version_ :</span>
+        <span>
+                      1465488493012582400
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">score :</span>
+        <span>
+                      0.0060540326
+                  </span>
+      </br>
+      </pre2>
+
+  
+</div>
+                  
+
+
+<div class="result-document">
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="result-title">
+      <img src="/solr/img/filetypes/false.png" align="center">
+
+    <a href="http://leagueoflegends.wikia.com/wiki/Tpa" target="_blank">
+    <b>wiki Tpa</b></a>
+
+    <span class="mlt">
+          <a href="?&debugQuery=true&q=id:%22http://leagueoflegends.wikia.com/wiki/Tpa%22&mlt=true">
+        More Like This</a>
+      </span>
+
+</div>
+
+<div>
+  Id:       http://leagueoflegends.wikia.com/wiki/Tpa      </div>
+
+<div>
+      URL: http://leagueoflegends.wikia.com/wiki/Tpa
+    </div>
+
+
+
+<div class="result-body">
+        
+introduced
+NeXAbc
+and
+former
+CLG
+member
+Lilballz,
+forming
+team
+FTW
+(
+For
+The
+Win
+).
+The
+team
+competed
+in
+Garena&#x27;s
+G1
+eSports
+<b>competition</b>,
+and
+was
+crowned
+#1
+out
+of
+150
+teams,
+qualifying
+for
+the
+World
+Cyber     ... 
+<b>competition</b>
+1
+1st
+place
+winner
+ot
+the
+IPL5
+Taiwanese
+Qualifiers
+1
+st
+place
+winner
+of
+the
+Season
+Two
+Taiwanese
+Regional
+Finals
+1
+st
+place
+winner
+of
+the
+Season
+Two
+World
+Championship
+1
+st
+place
+winner
+at
+2012
+GPL      </div>
+
+<div class="mlt">
+        </div>  
+
+
+  <a href="#" onclick='jQuery(this).siblings("pre").toggle(); return false;'>
+    toggle explain</a>
+
+  <pre style="display:none">
+    
+0.0060540326 = (MATCH) max of:
+  0.0060540326 = (MATCH) weight(text:competition^0.5 in 208) [DefaultSimilarity], result of:
+    0.0060540326 = score(doc=208,freq=2.0 = termFreq=2.0
+), product of:
+      0.026287818 = queryWeight, product of:
+        0.5 = boost
+        5.2110496 = idf(docFreq=109, maxDocs=7417)
+        0.0100892605 = queryNorm
+      0.23029803 = fieldWeight in 208, product of:
+        1.4142135 = tf(freq=2.0), with freq of:
+          2.0 = termFreq=2.0
+        5.2110496 = idf(docFreq=109, maxDocs=7417)
+        0.03125 = fieldNorm(doc=208)
+
+  </pre>
+
+  <a href="#" onclick='jQuery(this).siblings("pre2").toggle(); return false;'>
+    toggle all fields</a>
+
+  <pre2 style="display:none">
+          <br>
+        <span class="field-name">id :</span>
+        <span>
+                      http://leagueoflegends.wikia.com/wiki/Tpa
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">links :</span>
+        <span>
+                      http://leagueoflegends.wikia.com/wiki/Tpa
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">content :</span>
+        <span>
+                      http://leagueoflegends.wikia.com/wiki/Tpa
+Taipei
+Assassins
+-
+League
+of
+Legends
+Wiki
+-
+Champions,
+Items,
+Strategies,
+and
+many
+more!
+Skip
+to
+Content
+Skip
+to
+Wiki
+Navigation
+Skip
+to
+Site
+Navigation
+Start
+a
+wiki
+Video
+Games
+Entertainment
+Lifestyle
+Log
+in
+Or
+Connect
+Sign
+up
+On
+the
+Wiki
+Wiki
+Activity
+Random
+page
+Videos
+Photos
+Chat
+Forum
+League
+of
+Legends
+Champions
+Free
+champion
+rotation
+Backgrounds
+Strategies
+Ability
+Details
+Trivia
+Skins
+Judgements
+Fields
+of
+Justice
+Summoner's
+Rift
+Twisted
+Treeline
+Crystal
+Scar
+Howling
+Abyss
+Proving
+Grounds
+Magma
+Chamber
+Items
+Basic
+Advanced
+Legendary
+Mythical
+Consumables
+Removed
+Minions
+Melee
+Caster
+Siege
+Super
+Masteries
+Offense
+Defense
+Utility
+Spells
+Help
+Desk
+Wikia
+Help
+Forums
+Wiki
+discussions
+and
+announcements
+League
+of
+Legends
+discussions
+Wiki
+issues
+archive
+In-Game
+Help
+Glossary
+Hotkeys
+and
+commands
+Troubleshooting
+Wiki
+Policies
+Basic
+Wiki
+Rules
+Chat
+Policy
+Discussion
+policy
+Image
+policy
+Manual
+of
+Style
+Community
+User
+Rights
+Requests
+for
+Permissions
+Administrator
+Noticeboard
+Forums
+Wiki
+discussions
+and
+announcements
+League
+of
+Legends
+discussions
+Wiki
+issues
+archive
+Blogs
+Contribute
+Add
+a
+Video
+Add
+a
+Photo
+Add
+a
+Page
+Wiki
+Activity
+Share
+Watchlist
+Random
+page
+Recent
+changes
+Taipei
+Assassins
+Edit
+History
+Comments
+7
+1,792
+pages
+on
+this
+wiki
+Redirected
+from
+Tpa
+&quot;Hugify!&quot;
+This
+article
+is
+a
+stub
+.
+You
+can
+help
+the
+League
+of
+Legends
+Wiki
+by
+casting
+Wild
+Growth
+on
+it
+so
+it
+isn't
+as
+small
+as
+a
+yordle.
+Taipei
+Assassins
+Background
+Information
+Region:
+Southeast
+Asia
+Members:
+Toyz
+(captain)
+Stanley
+Lilballz
+DinTer
+Bebeisadog
+Sarsky
+Website
+http://taipeiassassins.tw/
+Sponsor:
+Garena
+Azubu
+History
+Former
+players
+MiSTakE
+Created:
+September
+2011
+Contents
+[
+show
+]
+Line
+Up
+ID
+Name
+Role
+Toyz
+Kurtis
+Lau
+AP
+Stanley
+Wang
+June
+Tsan
+Top
+Lilballz
+Alex
+Sung
+Jungle
+Sarsky
+Lo
+&quot;Allen&quot;
+Chong-Yu
+Jungle
+DinTer
+Hong-Wei
+Xue
+Support
+Bebe
+Cheng
+Bo
+Wei
+AD
+Bio
+Through
+League
+of
+Legends,
+leader
+Mistake
+met
+fellow
+Taiwanese
+player
+Stanley
+in
+a
+ranked
+game.
+Their
+mutual
+friend
+Colalin
+then
+introduced
+NeXAbc
+and
+former
+CLG
+member
+Lilballz,
+forming
+team
+FTW
+(
+For
+The
+Win
+).
+The
+team
+competed
+in
+Garena's
+G1
+eSports
+competition,
+and
+was
+crowned
+#1
+out
+of
+150
+teams,
+qualifying
+for
+the
+World
+Cyber
+Games
+2011.
+Garena
+noticed
+their
+outstanding
+performance
+and
+signed
+the
+team
+along
+with
+Bebeisadog
+and
+Toyz,
+forming
+Taiwan's
+first
+LoL
+Pro
+Gaming
+Team:
+Taipei
+Assassins
+.
+The
+team
+would
+go
+on
+to
+play
+very
+successfully
+in
+the
+Taiwanese
+Qualifiers
+and
+Regional
+Finals,
+which
+let
+them
+enter
+the
+Season
+Two
+Championship.
+Season
+Two
+World
+Championship
+Taipei
+Assassin
+competed
+in
+the
+Season
+2
+World
+championship,
+defeating
+Najin
+Sword
+with
+a
+score
+of
+2-0
+in
+their
+first
+matchup.
+Taipei
+Assassins
+went
+on
+to
+face
+Azubu
+Frost
+in
+the
+Grand
+Finals
+of
+the
+Season
+Two
+Championship
+.
+After
+losing
+the
+first
+round,
+the
+Taipei
+Assassins
+went
+on
+to
+win
+3
+consecutive
+victories
+in
+the
+best
+of
+5
+match
+up
+and
+became
+the
+World
+Champions
+of
+Season
+2.
+2012
+GPL
+Season
+1
+The
+Taipei
+Assassins
+continued
+to
+be
+a
+strong
+team.
+On
+November
+17th
+they
+entered
+the
+2012
+GPL
+Season
+1
+playoffs
+in
+Singapore
+and
+were
+seeded
+directly
+into
+the
+finals
+due
+to
+their
+seasonal
+record.
+The
+final
+showdown
+took
+place
+between
+Taipei
+Assassins
+and
+the
+Singapore
+Sentinels
+,
+who
+defeated
+the
+Saigon
+Jokers
+in
+the
+semi
+finals.
+Proving
+their
+strength
+again
+the
+Taipei
+Assassins
+went
+3-1
+in
+the
+best
+of
+5
+and
+earned
+1st
+place.
+Season
+Three
+At
+the
+beginning
+of
+2013
+Taipei
+Assassin's
+captain,
+MiSTakE
+,
+left
+the
+team
+with
+three
+of
+the
+team's
+subs
+to
+form
+their
+sister
+team
+-
+the
+Taipei
+Snipers
+.
+Toyz
+then
+became
+the
+new
+captain
+for
+the
+team.
+In
+March
+Taipei
+Assassins
+became
+sponsored
+by
+Azubu
+and
+began
+to
+play
+under
+the
+name
+Azubu
+TaipeiAssassins.
+On
+April
+4th
+they
+took
+1st
+place
+at
+2013
+GPL
+Spring
+.
+Notable
+Achievements
+1
+st
+place
+winner
+at
+Garena's
+G1
+eSports
+competition
+1
+1st
+place
+winner
+ot
+the
+IPL5
+Taiwanese
+Qualifiers
+1
+st
+place
+winner
+of
+the
+Season
+Two
+Taiwanese
+Regional
+Finals
+1
+st
+place
+winner
+of
+the
+Season
+Two
+World
+Championship
+1
+st
+place
+winner
+at
+2012
+GPL
+Season
+1
+1
+st
+place
+winner
+at
+2013
+GPL
+Spring
+Retrieved
+from
+&quot;
+http://leagueoflegends.wikia.com/wiki/Taipei_Assassins?oldid=1983384
+&quot;
+Categories
+:
+Article
+stubs
+Teams
+from
+Southeast
+Asia
+Advertisement
+|
+Your
+ad
+here
+Around
+Wikia's
+network
+Random
+Wiki
+Wikia
+Inc
+Navigation
+[
+Video
+Games
+]
+About
+Community
+Central
+Careers
+Advertise
+API
+Contact
+Wikia
+Terms
+of
+Use
+Privacy
+Policy
+Content
+is
+available
+under
+CC-BY-SA
+.
+Video
+Games
+Entertainment
+Lifestyle
+
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">title :</span>
+        <span>
+                      wiki Tpa
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">_version_ :</span>
+        <span>
+                      1465488496607100928
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">score :</span>
+        <span>
+                      0.0060540326
+                  </span>
+      </br>
+      </pre2>
+
+  
+</div>
+                  
+
+
+<div class="result-document">
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="result-title">
+      <img src="/solr/img/filetypes/false.png" align="center">
+
+    <a href="http://competitive.na.leagueoflegends.com/" target="_blank">
+    <b>Competitive | LoL - League of Legends</b></a>
+
+    <span class="mlt">
+          <a href="?&debugQuery=true&q=id:%22http://competitive.na.leagueoflegends.com/%22&mlt=true">
+        More Like This</a>
+      </span>
+
+</div>
+
+<div>
+  Id:       http://competitive.na.leagueoflegends.com/      </div>
+
+<div>
+      URL: http://competitive.na.leagueoflegends.com/
+    </div>
+
+
+
+<div class="result-body">
+         . 
+  
+ 
+ 
+
+ 
+ 
+  
+
+ 
+  
+  
+  
+
+ 
+ 
+ 
+  
+
+ 
+ 
+ 
+  
+    Register Now for Alienware Arenas Winter Season 
+    
+  
+   Alienware Arena is back for a fourth season of exciting League of Legends Battlegrounds <b>competition</b>. With over 5,000 teams from across the globe     ...  having participated in previous seasons, look no further for nonstop <b>competition</b> on the Fields of Justice. 
+  
+ 
+ 
+
+ 
+ 
+  
+
+ 
+  
+  
+  
+
+ 
+ 
+ 
+  
+
+ 
+ 
+ 
+  
+    Watch the Season 2 Finals! On-Demand Viewing      </div>
+
+<div class="mlt">
+        </div>  
+
+
+  <a href="#" onclick='jQuery(this).siblings("pre").toggle(); return false;'>
+    toggle explain</a>
+
+  <pre style="display:none">
+    
+0.0060540326 = (MATCH) max of:
+  0.0060540326 = (MATCH) weight(text:competition^0.5 in 135) [DefaultSimilarity], result of:
+    0.0060540326 = score(doc=135,freq=2.0 = termFreq=2.0
+), product of:
+      0.026287818 = queryWeight, product of:
+        0.5 = boost
+        5.2110496 = idf(docFreq=109, maxDocs=7417)
+        0.0100892605 = queryNorm
+      0.23029803 = fieldWeight in 135, product of:
+        1.4142135 = tf(freq=2.0), with freq of:
+          2.0 = termFreq=2.0
+        5.2110496 = idf(docFreq=109, maxDocs=7417)
+        0.03125 = fieldNorm(doc=135)
+
+  </pre>
+
+  <a href="#" onclick='jQuery(this).siblings("pre2").toggle(); return false;'>
+    toggle all fields</a>
+
+  <pre2 style="display:none">
+          <br>
+        <span class="field-name">id :</span>
+        <span>
+                      http://competitive.na.leagueoflegends.com/
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">links :</span>
+        <span>
+                      http://competitive.na.leagueoflegends.com/
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">content :</span>
+        <span>
+                      Competitive | LoL - League of Legends 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+ 
+   North America - English   Support Login Register  
+ 
+  Jump to Navigation 
+ 
+ 
+ 
+
+ 
+ 
+  LoL - League of Legends 
+  
+  Play For FREE  
+  
+   News   League of Legends Timeline 
+ Events 
+      
+ Game Info   Gameplay  Abilities and Effects 
+ Auras 
+ Brush 
+ Champion Statistics 
+ Fog of War 
+ Gold 
+ Invisibility 
+ Matchmaking 
+ Minions and Turrets 
+ Summoner Information 
+ Tactics 
+ Surrendering 
+ 
+ 
+ Champions 
+ Items 
+ Runes 
+ New User Guide 
+ Chat Commands 
+ Lore  Demacia 
+ Noxus 
+ The League of Legends 
+ 
+ 
+ Maps  Summoners Rift 
+ The Twisted Treeline 
+ 
+ 
+ The Summoners Code 
+ The Tribunal 
+      
+ Competitive   Intro to Season Three 
+ Esports Pro Site 
+ Ranked Leagues 
+ Season 3 FAQ 
+ Prized Events  Submit Prized Event 
+ Prized Event FAQ 
+ 
+ 
+ Competitive Events Forum 
+      
+ Forums   Announcements 
+ Dev Tracker 
+ Dominion 
+ Summoner's Rift 
+ Twisted Treeline 
+ General Discussion 
+      
+ Merchandise 
+ Media   Videos  Art Spotlight 
+ Champion Spotlights 
+ Summoner Showcases 
+ YouTube Channel 
+ 
+ 
+ Artwork Gallery 
+ Fan Art Galleries 
+ Screenshot Gallery 
+ Wallpapers 
+ Featured Streamers 
+      
+ 
+  
+  
+  
+ 
+ 
+
+ 
+
+  
+  
+
+  
+ 
+  
+ 
+  
+  Season 3 
+  Coming February 2013 
+  
+  
+  
+    
+   
+ 
+ 
+
+ 
+
+  
+ 
+  
+
+ 
+  
+ 
+  
+     
+       Competitive 
+               
+  
+
+  
+ 
+  
+  
+ 
+ 
+  
+   
+  
+
+ 
+  
+  
+  
+
+ 
+ 
+ 
+  
+
+ 
+ 
+ 
+  
+    What to Watch: IEM Sao Paulo 
+    
+  
+    The Electronic Sports League (ESL) heads to Sao Paulo, Brazil from January 31 to February 3 for its last stop before the IEM Season 7 Finals. 
+  
+ 
+ 
+
+ 
+ 
+  
+
+ 
+  
+  
+  
+
+ 
+ 
+ 
+  
+
+ 
+ 
+ 
+  
+    Five Teams Ascend to Pro from LCS NA Qualifier 
+    
+  
+   The League of Legends Championship Series (LCS) burst into action with the North American Qualifier, broadcast live from Los Angeles, California. Sixteen teams, some veterans and some dark horses, battled for five spots in the LCS. 
+  
+ 
+ 
+
+ 
+ 
+  
+
+ 
+  
+  
+  
+
+ 
+ 
+ 
+  
+
+ 
+ 
+ 
+  
+    New League System Coming Soon in Ranked 
+    
+  
+   In Season 3 were making some exciting renovations to ranked play. At the heart of the update is a new league system that provides more challenges for competitive players and a greater sense of progression for newcomers. Youll find an overview of how they work in the infographic below. 
+  
+ 
+ 
+
+ 
+ 
+  
+
+ 
+  
+  
+  
+
+ 
+ 
+ 
+  
+
+ 
+ 
+ 
+  
+    Team Curse readies for the Season 3 Live Qualifier 
+    
+  
+   Over the past few weeks, we had the chance to follow one of NAs most prominent teams, Curse Gaming, and talk to them about their journey to qualify for Season 3. 
+  
+ 
+ 
+
+ 
+ 
+  
+
+ 
+  
+  
+  
+
+ 
+ 
+ 
+  
+
+ 
+ 
+ 
+  
+    Season 3 League of Legends Championship Series 
+    
+  
+    The League of Legends Championship Series (LCS) is about to begin! 
+  
+ 
+ 
+
+ 
+ 
+  
+
+ 
+  
+  
+  
+
+ 
+ 
+ 
+  
+
+ 
+ 
+ 
+  
+    Top Teams Blast Through Season 3 Online Qualifier 
+    
+  
+   Season 3s Path to Pro rolled along last weekend with the top 32 ranked teams in Europe and North America competing in do-or-die online qualifiers for the chance to go pro. 
+  
+ 
+ 
+
+ 
+ 
+  
+
+ 
+  
+  
+  
+
+ 
+ 
+ 
+  
+
+ 
+ 
+ 
+  
+    Season 3 Path to Pro Deadline Reminder 
+    
+  
+   Summoners, 
+Interested in competing professionally in Season 3? Then form your ranked 5v5 teams soon, because any teams created after the December 14th deadline will be ineligible to compete (no exceptions)! For more information on the Season 3 Path to Pro, head over here for the details in NA , EUW , EUNE . 
+  
+ 
+ 
+
+ 
+ 
+  
+
+ 
+  
+  
+  
+
+ 
+ 
+ 
+  
+
+ 
+ 
+ 
+  
+    Register Now for Alienware Arenas Winter Season 
+    
+  
+   Alienware Arena is back for a fourth season of exciting League of Legends Battlegrounds competition. With over 5,000 teams from across the globe having participated in previous seasons, look no further for nonstop competition on the Fields of Justice. 
+  
+ 
+ 
+
+ 
+ 
+  
+
+ 
+  
+  
+  
+
+ 
+ 
+ 
+  
+
+ 
+ 
+ 
+  
+    Watch the Season 2 Finals! On-Demand Viewing Now Available 
+    
+  
+    The Finals mark the culmination of an exciting competitive season. Watch the worlds top two teams -- South Korea's Azubu Frost and Taiwan's Taipei Assassins -- battle head-to-head! 
+ 
+  
+ 
+ 
+
+ 
+ 
+  
+
+ 
+  
+  
+  
+
+ 
+ 
+ 
+  
+
+ 
+ 
+ 
+  
+    Season Two World Championship Site Now Live! 
+    
+  
+   Our Season Two World Championship website is now live! 
+  
+ 
+ 
+
+ 
+ 
+  
+
+ 
+  
+  
+  
+
+ 
+ 
+ 
+  
+
+ 
+ 
+ 
+  
+    North American Regionals at PAX Live 
+    
+  
+   Watch now as your favorite teams battle for $150,000 in prizes at the NA Regionals in Seattle 
+  
+ 
+ 
+
+ 
+ 
+  
+
+ 
+  
+  
+  
+
+ 
+ 
+ 
+  
+
+ 
+ 
+ 
+  
+    Live Now: MLG Summer Championships at Raleigh 
+    
+  
+    On August 24 th , twelve teams will descend on Raleigh, North Carolina for the Major League Gaming Summer Championships. 
+  
+ 
+ 
+
+ 
+ 
+  
+
+ 
+  
+  
+  
+
+ 
+ 
+ 
+  
+
+ 
+ 
+ 
+  
+    Tournament Code and Custom Game Pause features 
+    
+  
+   As the scope of our eSports community and tournaments grows, new tools and features for tournament play will be making their way into League of Legends. 
+  
+ 
+ 
+
+ 
+ 
+  
+
+ 
+  
+  
+  
+
+ 
+ 
+ 
+  
+
+ 
+ 
+ 
+  
+    ECC Poland Recap 
+    
+  
+   ECC Poland saw two distinct sets of teams competing for a chance at the $15,000 first place prize... 
+  
+ 
+ 
+
+ 
+ 
+  
+
+ 
+  
+  
+  
+
+ 
+ 
+ 
+  
+
+ 
+ 
+ 
+  
+    ECC Poland - Team Stats at a Glance 
+    
+  
+    Every tournament has standout champions. ECC Poland one was no exception! 
+  
+ 
+ 
+
+ 
+ 
+  
+
+ 
+  
+  
+  
+
+ 
+ 
+ 
+  
+
+ 
+ 
+ 
+  
+    Koreas Best Teams: OGNs The Champions 
+    
+  
+   Koreas most watched eSports show is back with the second season of The Champions. 
+  
+ 
+ 
+
+ 
+  
+ 
+ 
+ 
+ 
+  
+   See All Articles  
+ 
+ 
+ 
+
+     
+   
+  
+
+  
+ 
+  Learn More 
+
+ 
+
+   Challenger Circuit Standings 
+ 
+ 
+  North American Circuit 
+ 
+ Rank 
+ Team Name 
+ Circuit Points 
+  1 
+ Team SoloMid 
+ 1875 
+ 2 
+ Counter Logic Gaming 
+ 1150 
+ 3 
+ Dignitas 
+ 860 
+  
+
+ European Circuit 
+ 
+ Rank 
+ Team Name 
+ Circuit Points 
+  1 
+ Moscow Five 
+ 1400 
+ 2 
+ CLG EU 
+ 650 
+ 3 
+ SK Gaming 
+ 435 
+ 
+ NA and EU have separate circuits. Teams are ranked at a regional level only. 
+ See Full Standings 
+  
+
+ 
+
+   Win Big at Prized Events 
+ 
+ 
+  Test your skills against other competitors and win cash and cool prizes. Find a tournament to compete in here. 
+ Browse Prized Events  
+
+ 
+
+   Host A Tournament 
+ 
+ 
+  Submit your tournament information and we'll help get the word out. 
+ Submit a Tournament  
+
+  
+   
+ 
+ 
+ 
+  
+  
+   GAME INFORMATION   New User Guide 
+ Champions 
+ Items 
+ Gameplay 
+ Maps and Modes 
+ Lore 
+      
+ PVP.NET   Signup 
+ Support 
+      
+ Community   Forums 
+ Events 
+ Competitive 
+ The Summoner's Code 
+ The Tribunal 
+ Refer a Friend 
+ Merchandise 
+      
+ Media   Screenshot Gallery 
+ Wallpaper Gallery 
+ Artwork Gallery 
+ Video Gallery 
+      
+ 
+  
+  
+   RiotGames.com   Play For FREE   PvP.net   
+   2014 Riot Games Inc. All rights reserved. 
+   League of Legends and Riot Games Inc. are trademarks or registered trademarks of Riot Games, Inc. 
+    EULA 
+ Privacy Policy 
+ Terms of Use 
+ Tribunal 
+ 
+   
+  
+  
+  
+  
+   Facebook 
+   Twitter 
+   YouTube 
+  
+  
+     Alienware 
+     Razor 
+     ESRB
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">title :</span>
+        <span>
+                      Competitive | LoL - League of Legends
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">_version_ :</span>
+        <span>
+                      1465639977900572672
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">score :</span>
+        <span>
+                      0.0060540326
+                  </span>
+      </br>
+      </pre2>
+
+  
+</div>
+                  
+
+
+<div class="result-document">
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="result-title">
+      <img src="/solr/img/filetypes/false.png" align="center">
+
+    <a href="http://leagueoflegends.wikia.com/wiki/Great_Hunt" target="_blank">
+    <b>wiki Great Hunt</b></a>
+
+    <span class="mlt">
+          <a href="?&debugQuery=true&q=id:%22http://leagueoflegends.wikia.com/wiki/Great_Hunt%22&mlt=true">
+        More Like This</a>
+      </span>
+
+</div>
+
+<div>
+  Id:       http://leagueoflegends.wikia.com/wiki/Great_Hunt      </div>
+
+<div>
+      URL: http://leagueoflegends.wikia.com/wiki/Great_Hunt
+    </div>
+
+
+
+<div class="result-body">
+        
+<b>competition</b>!
+While
+celebrated
+by
+all
+major
+city-states,
+The
+Great
+Hunts
+origins
+lie
+in
+Bandle
+City.
+Renowned
+for
+their
+tricks
+and
+cleverness,
+youll
+find
+no
+wilier
+hunters
+than
+the
+yordles
+on
+this
+momentous     ... 
+at
+a
+time
+and
+ignoring
+the
+rest.
+The
+Great
+Hunt
+is
+no
+place
+for
+those
+who
+can&#x27;t
+handle
+the
+heat
+of
+the
+<b>competition</b>!
+Amumu,
+the
+Sad
+Mummy
+Amumu
+didn&#x27;t
+exactly
+come
+here
+to
+hunt
+for
+anyone
+but
+instead     ... 
+to
+start
+celebrating
+the
+rebirth
+of
+nature
+as
+we
+move
+into
+springtime.
+And
+what
+better
+way
+to
+celebrate
+the
+rebirth
+of
+nature
+than
+by
+kicking
+off
+a
+massive
+hunting
+<b>competition</b>!
+Each
+year
+after
+the      </div>
+
+<div class="mlt">
+        </div>  
+
+
+  <a href="#" onclick='jQuery(this).siblings("pre").toggle(); return false;'>
+    toggle explain</a>
+
+  <pre style="display:none">
+    
+0.0055609844 = (MATCH) max of:
+  0.0055609844 = (MATCH) weight(text:competition^0.5 in 1638) [DefaultSimilarity], result of:
+    0.0055609844 = score(doc=1638,freq=3.0 = termFreq=3.0
+), product of:
+      0.026287818 = queryWeight, product of:
+        0.5 = boost
+        5.2110496 = idf(docFreq=109, maxDocs=7417)
+        0.0100892605 = queryNorm
+      0.21154225 = fieldWeight in 1638, product of:
+        1.7320508 = tf(freq=3.0), with freq of:
+          3.0 = termFreq=3.0
+        5.2110496 = idf(docFreq=109, maxDocs=7417)
+        0.0234375 = fieldNorm(doc=1638)
+
+  </pre>
+
+  <a href="#" onclick='jQuery(this).siblings("pre2").toggle(); return false;'>
+    toggle all fields</a>
+
+  <pre2 style="display:none">
+          <br>
+        <span class="field-name">id :</span>
+        <span>
+                      http://leagueoflegends.wikia.com/wiki/Great_Hunt
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">links :</span>
+        <span>
+                      http://leagueoflegends.wikia.com/wiki/Great_Hunt
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">content :</span>
+        <span>
+                      http://leagueoflegends.wikia.com/wiki/Great_Hunt
+Great
+Hunt
+-
+League
+of
+Legends
+Wiki
+-
+Champions,
+Items,
+Strategies,
+and
+many
+more!
+Skip
+to
+Content
+Skip
+to
+Wiki
+Navigation
+Skip
+to
+Site
+Navigation
+Start
+a
+wiki
+Video
+Games
+Entertainment
+Lifestyle
+Log
+in
+Or
+Connect
+Sign
+up
+On
+the
+Wiki
+Wiki
+Activity
+Random
+page
+Videos
+Photos
+Chat
+Forum
+League
+of
+Legends
+Champions
+Free
+champion
+rotation
+Backgrounds
+Strategies
+Ability
+Details
+Trivia
+Skins
+Judgements
+Fields
+of
+Justice
+Summoner's
+Rift
+Twisted
+Treeline
+Crystal
+Scar
+Howling
+Abyss
+Proving
+Grounds
+Magma
+Chamber
+Items
+Basic
+Advanced
+Legendary
+Mythical
+Consumables
+Removed
+Minions
+Melee
+Caster
+Siege
+Super
+Masteries
+Offense
+Defense
+Utility
+Spells
+Help
+Desk
+Wikia
+Help
+Forums
+Wiki
+discussions
+and
+announcements
+League
+of
+Legends
+discussions
+Wiki
+issues
+archive
+In-Game
+Help
+Glossary
+Hotkeys
+and
+commands
+Troubleshooting
+Wiki
+Policies
+Basic
+Wiki
+Rules
+Chat
+Policy
+Discussion
+policy
+Image
+policy
+Manual
+of
+Style
+Community
+User
+Rights
+Requests
+for
+Permissions
+Administrator
+Noticeboard
+Forums
+Wiki
+discussions
+and
+announcements
+League
+of
+Legends
+discussions
+Wiki
+issues
+archive
+Blogs
+Contribute
+Add
+a
+Video
+Add
+a
+Photo
+Add
+a
+Page
+Wiki
+Activity
+Share
+Watchlist
+Random
+page
+Recent
+changes
+Great
+Hunt
+Edit
+History
+Comments
+18
+1,792
+pages
+on
+this
+wiki
+Participants
+of
+the
+Great
+Hunt
+The
+Great
+Hunt
+is
+an
+event
+to
+commemorate
+the
+coming
+of
+spring
+in
+the
+world
+of
+Valoran
+,
+particularly
+celebrated
+by
+the
+yordle
+citizens
+of
+Bandle
+City
+.
+The
+2012
+event
+started
+on
+March
+20th
+and
+ended
+on
+April
+2nd.
+Contents
+[
+show
+]
+Lore
+The
+wintry
+times
+of
+Snowdown
+Showdown
+and
+the
+Lunar
+Revel
+are
+over,
+and
+all
+the
+denizens
+of
+Valoran
+are
+busy
+making
+preparations
+for
+the
+spring.
+And
+what
+better
+way
+to
+welcome
+the
+worlds
+wildlife
+back
+from
+their
+long
+hibernation
+than
+with
+a
+massive
+hunting
+competition!
+While
+celebrated
+by
+all
+major
+city-states,
+The
+Great
+Hunts
+origins
+lie
+in
+Bandle
+City.
+Renowned
+for
+their
+tricks
+and
+cleverness,
+youll
+find
+no
+wilier
+hunters
+than
+the
+yordles
+on
+this
+momentous
+occasion.
+Its
+easy
+to
+see
+why!
+Yordle
+Hunters
+Teemo,
+the
+Swift
+Scout
+Teemo
+always
+remembers
+to
+pack
+a
+few
+poison
+mushrooms
+and
+blinding
+darts
+before
+heading
+off
+on
+a
+dire
+wolf
+hunt.
+Good
+things
+come
+to
+those
+who
+lie
+in
+wait!
+Tristana,
+the
+Megling
+Gunner
+Tristana
+hides
+atop
+a
+tree
+and
+shoots
+her
+game
+in
+a
+safe
+zone.
+Always
+keep
+a
+safe
+distance
+from
+your
+targets!
+Kennen,
+the
+Heart
+of
+the
+Tempest
+Kennen
+runs
+back
+and
+forth
+on
+the
+wolves,
+frying
+them
+with
+his
+lightning.
+Chasing
+is
+a
+breeze
+when
+you're
+as
+fast
+as
+lightning!
+Lulu,
+the
+Fae
+Sorceress
+Lulu
+puts
+her
+fairy
+magic
+to
+the
+test
+out
+on
+the
+hunting
+grounds.
+Even
+the
+most
+dangerous
+game
+can
+be
+docile
+as
+a
+squirrel
+with
+the
+proper
+application
+of
+whimsy.
+Poppy,
+the
+Iron
+Ambassador
+Poppy
+is
+ready
+to
+dive
+head
+on
+first
+into
+the
+fray,
+focusing
+on
+one
+target
+at
+a
+time
+and
+ignoring
+the
+rest.
+The
+Great
+Hunt
+is
+no
+place
+for
+those
+who
+can't
+handle
+the
+heat
+of
+the
+competition!
+Amumu,
+the
+Sad
+Mummy
+Amumu
+didn't
+exactly
+come
+here
+to
+hunt
+for
+anyone
+but
+instead
+came
+here
+to
+catch
+new
+pets
+to
+keep
+him
+company.
+It's
+always
+nice
+to
+have
+a
+new
+person
+to
+your
+circle
+of
+friends!
+Veigar,
+the
+Tiny
+Master
+of
+Evil
+Veigar
+calls
+upon
+the
+black
+arts
+to
+aid
+him
+on
+his
+trapping
+expedition.
+Its
+easier
+to
+get
+the
+drop
+on
+prey
+when
+you
+can
+bend
+space.
+Ziggs,
+the
+Hexplosives
+Expert
+Ziggs
+puts
+his
+angling
+skills
+to
+the
+test
+
+aided
+by
+a
+little
+custom
+bait
+of
+his
+own
+creation.
+Not
+all
+fishermen
+know
+that
+patience
+is
+a
+virtue!
+Announcements
+Prepare
+for
+the
+Great
+Hunt!
+Announced
+by
+NeeksNaman
+:
+Summoners!
+With
+the
+wintry
+times
+of
+Snowdown
+and
+the
+Lunar
+Revel
+behind
+us,
+its
+time
+to
+start
+celebrating
+the
+rebirth
+of
+nature
+as
+we
+move
+into
+springtime.
+And
+what
+better
+way
+to
+celebrate
+the
+rebirth
+of
+nature
+than
+by
+kicking
+off
+a
+massive
+hunting
+competition!
+Each
+year
+after
+the
+snows
+melt
+and
+the
+animals
+come
+back
+out
+of
+hibernation,
+the
+yordles
+of
+Valoran
+band
+together
+for
+the
+Great
+Hunt,
+staging
+massive
+competitions
+to
+see
+who
+can
+bring
+home
+the
+most
+impressive
+wild
+game.
+You
+can
+get
+a
+closer
+look
+at
+how
+some
+of
+the
+Valorans
+most
+famous
+yordles
+are
+celebrating
+here!
+With
+the
+Great
+Hunt
+taking
+place
+from
+March
+20
+to
+April
+2,
+we
+thought
+it
+might
+be
+a
+good
+time
+to
+offer
+you
+a
+hand
+selecting
+your
+own
+yordle
+hunting
+partners.
+Each
+week
+that
+the
+Hunt
+goes
+on
+well
+be
+holding
+a
+sale
+on
+a
+different
+group
+of
+Valorans
+most
+famous
+yordle
+champions
+to
+help
+you
+get
+your
+hunting
+party
+off
+on
+the
+right
+foot.
+The
+following
+yordle
+champions
+will
+be
+available
+for
+50%
+off
+from
+March
+20
+to
+March
+23!
+Teemo
+will
+be
+lying
+in
+wait
+for
+the
+most
+dangerous
+game
+this
+season.
+Pick
+up
+the
+Swift
+Scout
+(normally
+585
+RP)
+for
+only
+292
+RP.
+Tristana
+is
+ready
+to
+draw
+a
+bead
+on
+the
+most
+ferocious
+animals
+the
+wilds
+of
+Runeterra
+have
+to
+offer.
+Pick
+up
+the
+Megling
+Gunner
+(normally
+585
+RP)
+for
+only
+292
+RP.
+However,
+if
+you
+have
+a
+Facebook
+account,
+you
+can
+unlock
+Tristana
+and
+her
+Riot
+Girl
+skin
+for
+free
+by
+liking
+League
+of
+Legends!
+.
+Kennen
+(normally
+975
+RP)
+can
+help
+you
+chase
+down
+even
+the
+swiftest
+wild
+game
+for
+only
+487
+RP.
+Well
+also
+be
+knocking
+50%
+off
+the
+following
+skins
+for
+these
+yordle
+masters
+of
+the
+hunt
+between
+March
+20
+and
+March
+23!
+Get
+the
+drop
+on
+your
+prey
+by
+decking
+out
+your
+Swift
+Scout
+in
+his
+Recon
+Teemo
+regalia
+(normally
+520
+RP)
+for
+only
+260
+RP.
+Be
+sure
+that
+youre
+dressed
+for
+the
+jungle
+by
+picking
+up
+Guerilla
+Tristana
+(normally
+975
+RP)
+for
+only
+487
+Riot
+Points.
+If
+youre
+ready
+to
+hit
+the
+slopes
+of
+the
+snow
+belt,
+then
+Arctic
+Ops
+Kennen
+(normally
+975
+RP)
+can
+help
+you
+prepare
+for
+the
+climate
+for
+only
+487
+RP.
+Head
+on
+over
+to
+the
+League
+of
+Legends
+Store
+and
+pick
+up
+these
+pint-sized
+hunting
+aficionados
+before
+all
+the
+big
+game
+is
+already
+on
+display
+down
+at
+the
+lodge.
+Start
+your
+hunting
+expedition
+before
+the
+permits
+change
+on
+March
+23!
+[1]
+Still
+on
+the
+Hunt
+for
+Great
+Savings?
+Announced
+by
+NeeksNaman
+:
+Summoners!
+Week
+two
+of
+the
+Great
+Hunt
+is
+underway,
+and
+with
+all
+these
+feisty
+yordles
+clamoring
+to
+claim
+the
+most
+impressive
+prey,
+we
+thought
+it
+might
+be
+time
+to
+change
+things
+up
+on
+your
+hunting
+expedition.
+This
+week
+of
+the
+Hunt
+weve
+got
+a
+whole
+new
+roster
+of
+famous
+yordle
+champions
+to
+help
+you
+get
+the
+drop
+on
+even
+the
+most
+dangerous
+game.
+You
+can
+get
+a
+closer
+look
+at
+some
+yordle
+hunting
+tactics
+by
+visiting
+the
+Great
+Hunt
+page
+below!
+Whether
+youre
+hunting
+dire
+wolves,
+dragon
+sharks,
+golems,
+lizards,
+ancient
+wyrms
+or
+the
+occasional
+armored
+bear,
+weve
+got
+just
+the
+yordle
+crew
+to
+help
+you
+bring
+home
+the
+bacon.
+Heres
+a
+complete
+list
+of
+those
+yordles
+who
+will
+be
+on
+the
+hunt
+this
+week.
+The
+following
+yordle
+champions
+will
+be
+available
+for
+50%
+of
+from
+Tuesday,
+the
+27th
+of
+March
+to
+Friday,
+the
+30th
+of
+March!
+Poppy
+(normally
+260
+RP)
+is
+ready
+to
+lead
+the
+charge
+on
+your
+hunting
+party
+for
+only
+130
+RP.
+Amumu
+(normally
+585
+RP)
+is
+ready
+to
+help
+you
+hunt
+for
+some
+new
+friends
+for
+only
+292
+RP.
+Even
+Veigar
+has
+put
+aside
+his
+deliciously
+evil
+pursuits
+for
+a
+bit
+of
+sporting
+this
+spring.
+Catch
+the
+Tiny
+Master
+of
+Evil
+(normally
+585
+RP)
+on
+the
+hunt
+for
+only
+292
+Riot
+Points.
+Well
+also
+be
+knocking
+50%
+off
+the
+following
+skins
+for
+these
+yordle
+masters
+of
+the
+hunt
+between
+Tuesday,
+the
+27th
+and
+March
+to
+Friday,
+the
+30th
+of
+March!
+You
+can
+keep
+your
+Iron
+Ambassador
+ready
+to
+wrestle
+even
+the
+most
+rambunctious
+critters
+with
+Battle
+Regalia
+Poppy
+(normally
+975
+RP)
+for
+only
+487
+RP.
+If
+youre
+looking
+into
+cornering
+some
+truly
+dangerous
+prey,
+you
+can
+stay
+well
+protected
+with
+Little
+Knight
+Amumu
+(normally
+975
+RP)
+for
+only
+487
+RP.
+Theres
+no
+better
+hunter
+than
+a
+wise
+hunter,
+so
+Greybeard
+Veigar
+(normally
+975
+RP)
+can
+be
+ready
+to
+hit
+the
+trails
+for
+only
+487
+Riot
+Points.
+[2]
+The
+Great
+Hunt
+Wallpapers
+Announced
+by
+NeeksNaman
+:
+Summoners!
+At
+your
+request,
+we
+give
+you:
+The
+Great
+Hunt
+wallpapers!
+Now
+you
+can
+set
+your
+desktops
+to
+these
+beautiful
+illustrations
+of
+yordles,
+proving
+that
+size
+is
+of
+no
+matter
+on
+the
+Fields
+of
+Justice.
+[3]
+Teemo
+Lulu
+Veigar
+Ziggs
+1
+of
+4
+References
+
+Prepare
+for
+the
+Great
+Hunt!
+]
+
+Still
+on
+the
+Hunt
+for
+Great
+Savings?
+]
+
+The
+Great
+Hunt
+Wallpapers
+]
+Retrieved
+from
+&quot;
+http://leagueoflegends.wikia.com/wiki/Great_Hunt?oldid=1973797
+&quot;
+Categories
+:
+Great
+Hunt
+Lore
+2012
+Languages:
+Deutsch
+
+Advertisement
+|
+Your
+ad
+here
+Around
+Wikia's
+network
+Random
+Wiki
+Wikia
+Inc
+Navigation
+[
+Video
+Games
+]
+About
+Community
+Central
+Careers
+Advertise
+API
+Contact
+Wikia
+Terms
+of
+Use
+Privacy
+Policy
+Content
+is
+available
+under
+CC-BY-SA
+.
+Video
+Games
+Entertainment
+Lifestyle
+
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">title :</span>
+        <span>
+                      wiki Great Hunt
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">_version_ :</span>
+        <span>
+                      1465488446779817984
+                  </span>
+      </br>
+          <br>
+        <span class="field-name">score :</span>
+        <span>
+                      0.005560984
+                  </span>
+      </br>
+      </pre2>
+
+  
+</div>
+              
+</div>
+
+<div class="pagination">
+  
+
+
+
+    
+  <span class="results-found">82</span>
+  results found.
+
+  Page <span class="page-num">1</span>
+    of <span class="page-count">9</span>
+
+        <a class="next-page" href="/solr/collection1/browse?&debugQuery=true&q=competition&start=10">next</a>
+  
+<br/>
+</div>
+
+    </div>
+    <div id="footer">
+      
+
+<hr/>
+<div>
+  <span>Options:</span>
+
+      <a href="/solr/collection1/browse?&q=competition">
+      disable debug</a>
+    -
+      <a href="/solr/collection1/browse?&debugQuery=true&q=competition&annotateBrowse=true">
+      enable annotation</a>
+    -
+  <a  href="/solr/collection1/browse?&debugQuery=true&q=competition&wt=xml&debugQuery=true">
+    XML results</a>
+
+</div>
+
+<div>
+  Generated by <a href="http://wiki.apache.org/solr/VelocityResponseWriter">VelocityResponseWriter</a>
+</div>
+<div>
+  <span>Documentation: </span>
+  <a href="http://lucene.apache.org/solr">Solr Home Page</a>, <a href="http://wiki.apache.org/solr">
+    Solr Wiki</a>
+  </div>
+<div>
+  Disclaimer:
+  The locations displayed in this demonstration are purely fictional.
+  It is more than likely that no store with the items listed actually
+  exists at that location!
+</div>
+    </div>
+  </body>
+</html>
